@@ -1,0 +1,27 @@
+<h2>ERP Employess</h2>
+<ul class="employees">
+    <li>
+        <span class="badge">{{employee.EmployeeId}}</span> {{employee.Name}}
+    </li>
+</ul>
+
+
+
+
+<h2>{{employee.Name | uppercase}} Details</h2>
+
+<div>
+    <label>name:
+      <input [(ngModel)]=" employee.Name" placeholder="name"/>
+    </label>
+</div>
+<div>
+    <label>lastname:
+      <input [(ngModel)]=" employee.LastName" placeholder="lastname"/>
+    </label>
+</div>
+<div><span> <strong>Id: </strong></span>{{employee.EmployeeId}}</div>
+<div><span><strong>Name:</strong> </span>{{employee.Name}}</div>
+<div><span><strong>Lastame:</strong> </span>{{employee.LastName}}</div>
+<div><span><strong>Position Job:</strong> </span>{{employee.PositionJob}}</div>
+<div><span><strong>Salary:</strong> </span>{{employee.Salary}}</div>

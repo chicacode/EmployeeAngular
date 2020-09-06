@@ -12,7 +12,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let employee of employees" class="employees">
+            <tr *ngFor="let employee of employees" class="employees" [class.selected]="employee === selectedEmployee" (click)="onSelect(employee)">
                 <td><span class="badge">{{employee.EmployeeId}}</span></td>
                 <td>{{employee.Name}}</td>
                 <td>{{employee.LastName}}</td>
@@ -20,8 +20,10 @@
                 <td>{{employee.Salary}} </td>
                 <td>
                     <ul>
-                        <li>Edit</li>
-                        <li>Delete</li>
+                        <li class="list-inline-item">
+                            <i class="fas fa user-edit"></i> Edit
+                        </li>
+                        <li class="list-inline-item"> <i class="fas fa-trash"></i>Delete</li>
                     </ul>
                 </td>
             </tr>
@@ -32,20 +34,20 @@
 
 
 
-<h2>{{employee.Name | uppercase}} Details</h2>
+<div *ngIf="selectedEmployee">
 
-<div>
-    <label>name:
-      <input [(ngModel)]=" employee.Name" placeholder="name"/>
+    <h2>{{selectedEmployee.Name | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedEmployee.EmployeeId}}</div>
+    <div>
+        <label>name:
+      <input [(ngModel)]="selectedEmployee.Name" placeholder="name"/>
     </label>
+    </div>
+
+    <div><span> <strong>Id: </strong></span>{{selectedEmployee.EmployeeId}}</div>
+    <div><span><strong>Name:</strong> </span>{{selectedEmployee.Name}}</div>
+    <div><span><strong>Lastame:</strong> </span>{{selectedEmployee.LastName}}</div>
+    <div><span><strong>Position Job:</strong> </span>{{selectedEmployee.PositionJob}}</div>
+    <div><span><strong>Salary:</strong> </span>{{selectedEmployee.Salary}}</div>
+
 </div>
-<div>
-    <label>lastname:
-      <input [(ngModel)]=" employee.LastName" placeholder="lastname"/>
-    </label>
-</div>
-<div><span> <strong>Id: </strong></span>{{employee.EmployeeId}}</div>
-<div><span><strong>Name:</strong> </span>{{employee.Name}}</div>
-<div><span><strong>Lastame:</strong> </span>{{employee.LastName}}</div>
-<div><span><strong>Position Job:</strong> </span>{{employee.PositionJob}}</div>
-<div><span><strong>Salary:</strong> </span>{{employee.Salary}}</div>

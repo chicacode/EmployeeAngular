@@ -9,17 +9,22 @@ import { EMPLOYEES } from '../../fake-employees';
 })
 export class EmployeesListComponent implements OnInit {
 
-  // interface type Employee
-  employee: Employee = {
-    EmployeeId: 1,
-    Name: 'Tony',
-    LastName: 'Stark',
-    PositionJob: 'Iron Man',
-    Salary: 20.000
-  };
-
   // expose the  EMPLOYEES array for binding.
-  employees = EMPLOYEES;
+    employees = EMPLOYEES;
+  // interface type Employee
+  // employee: Employee = {
+  //   EmployeeId: 1,
+  //   Name: 'Tony',
+  //   LastName: 'Stark',
+  //   PositionJob: 'Iron Man',
+  //   Salary: 20.000
+  // };
+
+  selectedEmployee: Employee;
+  onSelect(employee: Employee): void {
+    this.selectedEmployee = employee;
+  }
+
   constructor() { }
 
   ngOnInit(): void {

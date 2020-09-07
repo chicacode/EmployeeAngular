@@ -10,7 +10,8 @@ export class EmployeeService {
 
   constructor() { }
 
-  getEmployee(): Employee[]{
+  getEmployees(): Employee[]{
+    console.log("Retornando empleados");
     return EMPLOYEES;
   }
 }

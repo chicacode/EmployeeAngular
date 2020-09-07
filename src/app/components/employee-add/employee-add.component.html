@@ -1,0 +1,24 @@
+<section class="sample-app-content">
+    <h1>Model-based Form Example:</h1>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+        <p>
+            <label>First Name:</label>
+            <input type="text" formControlName="Name">
+        </p>
+        <p>
+            <label>First Name:</label>
+            <input type="text" formControlName="LastName">
+        </p>
+        <p>
+            <label>Job Position</label>
+            <input type="text" formControlName="PositionJob">
+        </p>
+        <p>
+            <label>Salary</label>
+            <input type="number" formControlName="Salary">
+        </p>
+        <p>
+            <button type="submit" [disabled]="!employeeForm.valid">Submit</button>
+        </p>
+    </form>
+</section>

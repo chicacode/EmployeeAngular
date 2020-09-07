@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../models/employee';
 import { EmployeeService } from '../../employee.service';
-import { from } from 'rxjs';
+
 
 @Component({
   selector: 'app-employees',
@@ -27,6 +27,7 @@ export class EmployeesListComponent implements OnInit {
 
   getEmployees(): void{
     // Syncronous signature subscaribe waith for the observable
+    // The subscribe() method passes the emitted array to the callback
     this.employeeService.getEmployees()
     .subscribe(employees => this.employees = employees);
   }

@@ -18,6 +18,12 @@
     border-radius: 4px;
 }
 
+.table-bordered td:hover {
+    color: #607D8B;
+    background-color: #DDD;
+    left: .1em;
+}
+
 .employees li:hover {
     color: #607D8B;
     background-color: #DDD;
@@ -25,12 +31,12 @@
 }
 
 .employees li.selected {
-    background-color: #CFD8DC;
+    background-color: #630580;
     color: white;
 }
 
 .employees li.selected:hover {
-    background-color: #BBD8DC;
+    background-color: #d5bbdc;
     color: white;
 }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../../employee.service';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -12,13 +12,24 @@ export class EmployeeAddComponent implements OnInit {
 
   employeeForm: FormGroup;
 
-  constructor() { }
+  constructor(private employeeService: EmployeeService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.employeeForm = this.formBuilder.group({
+      Name: ['', Validators.required],
+      LastName: ['', Validators.required],
+      PositionJob: ['', Validators.required],
+      Salary: ['', Validators.required]
+    });
   }
 
   onSubmit(): void {
-    console.log('Send');
+    this.setIDtoStringInForm();
+    console.log('Send' + this.employeeForm.value);
+    this.employeeService.addEmployee(this.employeeForm.value);
   }
-
+  setIDtoStringInForm(): void{
+    // tslint:disable-next-line: max-line-length
+    this.employeeForm.setValue({ Name: this.employeeForm.value.Name, LastName: this.employeeForm.value.LastName, PositionJob: this.employeeForm.value.PositionJob, Salary: this.employeeForm.value.Salary } );
+  }
 }

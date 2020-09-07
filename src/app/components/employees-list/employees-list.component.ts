@@ -26,8 +26,9 @@ export class EmployeesListComponent implements OnInit {
   }
 
   getEmployees(): void{
-    // Syncronous signature
-    this.employees = this.employeeService.getEmployees();
+    // Syncronous signature subscaribe waith for the observable
+    this.employeeService.getEmployees()
+    .subscribe(employees => this.employees = employees);
   }
 
 

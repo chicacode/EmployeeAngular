@@ -1,24 +1,28 @@
 <section class="sample-app-content">
-    <h1>Model-based Form Example:</h1>
-    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
-        <p>
-            <label>First Name:</label>
-            <input type="text" formControlName="Name">
-        </p>
-        <p>
-            <label>First Name:</label>
-            <input type="text" formControlName="LastName">
-        </p>
-        <p>
-            <label>Job Position</label>
-            <input type="text" formControlName="PositionJob">
-        </p>
-        <p>
-            <label>Salary</label>
-            <input type="number" formControlName="Salary">
-        </p>
-        <p>
-            <button type="submit" [disabled]="!employeeForm.valid">Submit</button>
-        </p>
+    <h1 class="text-center">Add Employee</h1>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" novalidate class="form">
+
+        <div class="form-group">
+            <label for="Name">First Name:</label>
+            <input type="text" formControlName="Name" placeholder="Name" name="Name" class="form-control" id="Name">
+            <div class="alert alert-danger" *ngIf="employeeForm.get('Name').hasError('required') && employeeForm.get('Name').touched">Name is required</div>
+        </div>
+        <div class="form-group">
+            <label for="LastName">LastName Name:</label>
+            <input type="text" formControlName="LastName" placeholder="LastName" name="LastName" class="form-control" id="LastName">
+            <div class="alert alert-danger" *ngIf="employeeForm.get('LastName').hasError('required') && employeeForm.get('LastName').touched">LastName is required</div>
+        </div>
+
+        <div class="form-group">
+            <label for="PositionJob">Job Position</label>
+            <input type="text" formControlName="PositionJob" placeholder="Job Position" name="PositionJob" class="form-control" id="PositionJob">
+            <div class="alert alert-danger" *ngIf="employeeForm.get('PositionJob').hasError('required') && employeeForm.get('PositionJob').touched">Job Position is required</div>
+        </div>
+        <div class="form-group">
+            <label for="Salary">Salary</label>
+            <input type="number" formControlName="Salary" placeholder="Salary" name="Salary" class="form-control" id="Salary">
+            <div class="alert alert-danger" *ngIf="employeeForm.get('Salary').hasError('required') && employeeForm.get('Salary').touched">Job Position is required</div>
+        </div>
+        <button class="btn btn-success" [disabled]="!employeeForm.valid">Save</button>
     </form>
 </section>

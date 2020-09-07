@@ -17,11 +17,12 @@ export class EmployeeService {
     return of (EMPLOYEES);
   }
 
-  addEmployee(employee: Employee): void{
-      EMPLOYEES.push(employee);
-      console.log('Añadiendo empleados');
+  getEmployee(id: number): Observable<Employee> {
+    return of(EMPLOYEES.find(employee => employee.EmployeeId === id));
   }
 
-
+  addEmployee(employee: Employee): void{
+      EMPLOYEES.push(employee);
+  }
 
 }

@@ -13,8 +13,12 @@
         </thead>
         <tbody>
             <tr *ngFor="let employee of employees" class="employees" [class.selected]="employee === selectedEmployee" (click)="onSelect(employee)">
+
                 <td><span class="badge">{{employee.EmployeeId}}</span></td>
-                <td>{{employee.Name}}</td>
+                <a routerLink="/detail/{{employee.EmployeeId}}">
+                    <td>{{employee.Name}}</td>
+                </a>
+
                 <td>{{employee.LastName}}</td>
                 <td>{{employee.PositionJob}}</td>
                 <td>{{employee.Salary}} </td>
@@ -26,10 +30,11 @@
                         <li class="list-inline-item"> <i class="fas fa-trash"></i>Delete</li>
                     </ul>
                 </td>
+
             </tr>
         </tbody>
 
     </table>
 </div>
-<app-employee-detail [employee]="selectedEmployee"></app-employee-detail>
-<app-employee-add></app-employee-add>
+<!-- <app-employee-detail [employee]="selectedEmployee"></app-employee-detail> -->
+<!-- <app-employee-add></app-employee-add> -->

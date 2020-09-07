@@ -25,7 +25,6 @@ export class EmployeeAddComponent implements OnInit {
 
   onSubmit(): void {
     this.setIDtoStringInForm();
-    console.log('Send' + this.employeeForm.value);
     this.employeeService.addEmployee(this.employeeForm.value);
   }
   setIDtoStringInForm(): void{

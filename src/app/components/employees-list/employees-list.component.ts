@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Employee } from '../../models/employee';
 import { EmployeeService } from '../../employee.service';
 
@@ -15,7 +16,7 @@ export class EmployeesListComponent implements OnInit {
   employees: Employee[];
   selectedEmployee: Employee;
  // Dependency injection private property
- constructor(private employeeService: EmployeeService) { }
+ constructor(private employeeService: EmployeeService, private router: Router) { }
 
   ngOnInit(): void {
     this.getEmployees();
@@ -23,6 +24,7 @@ export class EmployeesListComponent implements OnInit {
 
   onSelect(employee: Employee): void {
     this.selectedEmployee = employee;
+    this.router.navigate(['/employeedetail']);
   }
 
   getEmployees(): void{

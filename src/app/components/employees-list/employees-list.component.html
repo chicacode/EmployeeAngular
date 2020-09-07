@@ -31,23 +31,4 @@
 
     </table>
 </div>
-
-
-
-<div *ngIf="selectedEmployee">
-
-    <h2>{{selectedEmployee.Name | uppercase}} Details</h2>
-    <div><span>id: </span>{{selectedEmployee.EmployeeId}}</div>
-    <div>
-        <label>name:
-      <input [(ngModel)]="selectedEmployee.Name" placeholder="name"/>
-    </label>
-    </div>
-
-    <div><span> <strong>Id: </strong></span>{{selectedEmployee.EmployeeId}}</div>
-    <div><span><strong>Name:</strong> </span>{{selectedEmployee.Name}}</div>
-    <div><span><strong>Lastame:</strong> </span>{{selectedEmployee.LastName}}</div>
-    <div><span><strong>Position Job:</strong> </span>{{selectedEmployee.PositionJob}}</div>
-    <div><span><strong>Salary:</strong> </span>{{selectedEmployee.Salary}}</div>
-
-</div>
+<app-employee-detail [employee]="selectedEmployee"></app-employee-detail>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../models/employee';
-import { EMPLOYEES } from '../../fake-employees';
+import {EmployeeService} from '../../employee.service';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-employees',
@@ -10,8 +11,8 @@ import { EMPLOYEES } from '../../fake-employees';
 export class EmployeesListComponent implements OnInit {
 
   // expose the  EMPLOYEES array for binding.
-    employees = EMPLOYEES;
   // interface type Employee
+  employees: Employee[];
   // employee: Employee = {
   //   EmployeeId: 1,
   //   Name: 'Tony',
@@ -25,7 +26,8 @@ export class EmployeesListComponent implements OnInit {
     this.selectedEmployee = employee;
   }
 
-  constructor() { }
+  // Dependency injection
+  constructor(private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
   }

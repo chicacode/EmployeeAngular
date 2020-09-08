@@ -1,0 +1,34 @@
+<h3>Our Services</h3>
+
+<!-- Crear array de botones o cards con mis servicios de gestion -->
+<div class="grid grid-pad">
+    <a class="col-1-4">
+        <div class="module hero">
+            <h4>Manufacturing</h4>
+        </div>
+    </a>
+    <a class="col-1-4">
+        <div class="module hero">
+            <h4>Supply Chain</h4>
+        </div>
+    </a>
+    <a class="col-1-4">
+        <div class="module hero">
+            <h4>Financial</h4>
+        </div>
+    </a>
+    <a class="col-1-4">
+        <div class="module hero">
+            <h4>CRM</h4>
+        </div>
+    </a>
+</div>
+
+<h3>Top Employees</h3>
+<div class="grid grid-pad">
+    <a *ngFor="let employee of employees" class="col-1-4">
+        <div class="module hero">
+            <h4>{{employee.Name}}</h4>
+        </div>
+    </a>
+</div>

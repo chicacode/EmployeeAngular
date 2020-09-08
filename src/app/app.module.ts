@@ -8,6 +8,7 @@ import { EmployeeDetailComponent } from './components/employee-detail/employee-d
 import { EmployeesListComponent } from './components/employees-list/employees-list.component';
 import { EmployeeUpdateComponent } from './components/employee-update/employee-update.component';
 import { EmployeeAddComponent } from './components/employee-add/employee-add.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { EmployeeAddComponent } from './components/employee-add/employee-add.com
     EmployeeDetailComponent,
     EmployeesListComponent,
     EmployeeUpdateComponent,
-    EmployeeAddComponent
+    EmployeeAddComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

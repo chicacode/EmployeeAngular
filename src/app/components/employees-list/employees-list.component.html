@@ -12,15 +12,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let employee of employees" class="employees" [class.selected]="employee === selectedEmployee">
-                <td><span class="badge">{{employee.EmployeeId}}</span></td>
-                <a routerLink="/detail/{{employee.EmployeeId}}">
-                    <td>{{employee.Name}}</td>
+            <tr *ngFor="let employee of employees" class="employees">
+                <td><span class="badge">{{employee.employeeId}}</span></td>
+                <a routerLink="/detail/{{employee.employeeId}}">
+                    <td>{{employee.name}}</td>
                 </a>
 
-                <td>{{employee.LastName}}</td>
-                <td>{{employee.PositionJob}}</td>
-                <td>{{employee.Salary}} </td>
+                <td style="color:black;"> {{employee.lastname}}</td>
+                <td>{{employee.positionJob}}</td>
+                <td>{{employee.salary}} </td>
                 <td>
                     <ul>
                         <li class="list-inline-item">

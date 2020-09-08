@@ -25,8 +25,11 @@ export class EmployeesListComponent implements OnInit {
   getEmployees(): void{
     // ASyncronous signature subscribe waith for the observable
     // The subscribe() method passes the emitted array to the callback
-    this.employeeService.getEmployees()
-    .subscribe(employees => this.employees = employees);
+    this.employeeService.getEmployees().subscribe(
+      response => {this.employees = response; console.log(response); },
+      error => {console.log('There was a problem to get employees'); }
+    );
+    // .subscribe(employees => this.employees = employees);
   }
 
 }

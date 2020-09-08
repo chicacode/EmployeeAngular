@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
+
 
 import { Employee } from './models/employee';
-import { EMPLOYEES } from './fake-employees';
 
 
 @Injectable({
@@ -20,22 +21,38 @@ export class EmployeeService {
   };
 
   constructor( private http: HttpClient ) {
-    this.url = 'https://localhost:44333/api/Employees';
+    this.url = 'https://localhost:44333/api/employees';
    }
 // observer design pattern is a behavioral pattern.
 // This pattern is used when there is is one to many relationship between objects such is one is
 // modified the othe has to be notified
   getEmployees(): Observable<Employee[]>{
-    return this.http.get<Employee[]>(this.url);
-    console.log('En la respuesta');
+    return this.http.get<Employee[]>(this.url)
+    .pipe(
+      catchError(this.handleError<Employee[]>('getEmployees', []))
+    );
   }
 
+
   getEmployee(id: number): Observable<Employee> {
-    return of(EMPLOYEES.find(employee => employee.EmployeeId === id));
+    // return of(EMPLOYEES.find(employee => employee.EmployeeId === id));
+    return null;
   }
 
   addEmployee(employee: Employee): void{
-      EMPLOYEES.push(employee);
+      // EMPLOYEES.push(employee);
+  }
+
+  // tslint:disable-next-line: typedef
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
   }
 
 }

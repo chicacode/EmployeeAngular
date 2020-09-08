@@ -1,8 +1,13 @@
-<div *ngIf="employee">
-    <div><span> <strong>Id: </strong></span>{{employee.EmployeeId}}</div>
-    <div><span><strong>Name:</strong> </span>{{employee.Name}}</div>
-    <div><span><strong>Lastame:</strong> </span>{{employee.LastName}}</div>
-    <div><span><strong>Position Job:</strong> </span>{{employee.PositionJob}}</div>
-    <div><span><strong>Salary:</strong> </span>{{employee.Salary}}</div>
-    <button (click)="goBack()">go back</button>
+<div class="card mx-auto mt-3" style="width: 18rem;" *ngIf="employee">
+    <div class="card-header">
+        Employee
+    </div>
+    <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted"><span> <strong>Id: </strong></span>{{employee.EmployeeId}}</h6>
+        <div><span><strong>Name:</strong> </span>{{employee.Name}}</div>
+        <p class="card-text"><span><strong>Lastame:</strong> </span>{{employee.LastName}}</p>
+        <div><span><strong>Position Job:</strong> </span>{{employee.PositionJob}}</div>
+        <div><span><strong>Salary:</strong> </span>{{employee.Salary}}</div>
+        <button type="button" class="btn btn-info" (click)="goBack()">go back</button>
+    </div>
 </div>

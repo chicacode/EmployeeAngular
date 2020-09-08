@@ -11,10 +11,10 @@ import { EmployeeService } from '../../employee.service';
 })
 export class EmployeesListComponent implements OnInit {
 
-  // expose the  EMPLOYEES array for binding.
   // interface type Employee
-  employees: Employee[];
   selectedEmployee: Employee;
+  employees: Employee[];
+
  // Dependency injection private property
  constructor(private employeeService: EmployeeService, private router: Router) { }
 
@@ -28,11 +28,10 @@ export class EmployeesListComponent implements OnInit {
   }
 
   getEmployees(): void{
-    // Syncronous signature subscaribe waith for the observable
+    // ASyncronous signature subscribe waith for the observable
     // The subscribe() method passes the emitted array to the callback
     this.employeeService.getEmployees()
     .subscribe(employees => this.employees = employees);
   }
-
 
 }

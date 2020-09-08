@@ -23,10 +23,11 @@ button {
 
 button:hover {
     background-color: #cfd8dc;
+    color: rgb(133, 5, 138);
 }
 
 button:disabled {
     background-color: #eee;
-    color: #ccc;
+    color: rgb(133, 5, 138);
     cursor: auto;
 }

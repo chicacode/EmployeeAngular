@@ -26,6 +26,7 @@ export class EmployeeDetailComponent implements OnInit {
   }
 
   goBack(): void {
+    // navigate backward one step in the browsers history using Location service i injected previously
     this.location.back();
   }
 

@@ -42,11 +42,14 @@ h4 {
 .module {
     padding: 20px;
     text-align: center;
-    color: #eee;
+    color: #000;
     max-height: 120px;
     min-width: 120px;
-    background-color: #3f525c;
-    border-radius: 2px;
+    background-color: #ebebeb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+    border: none;
+    outline: none;
+    border-radius: 40px;
 }
 
 .module:hover {

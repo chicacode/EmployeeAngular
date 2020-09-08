@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EmployeesListComponent } from './components/employees-list/employees-list.component';
+
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EmployeeAddComponent } from './components/employee-add/employee-add.component';
 import { EmployeeDetailComponent } from './components/employee-detail/employee-detail.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { EmployeesListComponent } from './components/employees-list/employees-list.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },

@@ -22,11 +22,6 @@ export class EmployeesListComponent implements OnInit {
     this.getEmployees();
   }
 
-  onSelect(employee: Employee): void {
-    this.selectedEmployee = employee;
-    this.router.navigate(['/employeedetail']);
-  }
-
   getEmployees(): void{
     // ASyncronous signature subscribe waith for the observable
     // The subscribe() method passes the emitted array to the callback

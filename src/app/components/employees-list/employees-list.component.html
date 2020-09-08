@@ -12,8 +12,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let employee of employees" class="employees" [class.selected]="employee === selectedEmployee" (click)="onSelect(employee)">
-
+            <tr *ngFor="let employee of employees" class="employees" [class.selected]="employee === selectedEmployee">
                 <td><span class="badge">{{employee.EmployeeId}}</span></td>
                 <a routerLink="/detail/{{employee.EmployeeId}}">
                     <td>{{employee.Name}}</td>

@@ -26,7 +26,7 @@
 
 <h3>Top Employees</h3>
 <div class="grid grid-pad">
-    <a *ngFor="let employee of employees" class="col-1-4">
+    <a *ngFor="let employee of employees" class="col-1-4" routerLink="/detail/{{employee.EmployeeId}}">
         <div class="module hero">
             <h4>{{employee.Name}}</h4>
         </div>

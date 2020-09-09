@@ -43,6 +43,12 @@ export class EmployeeService {
     );
   }
 
+  updateEmployee(employee: Employee): Observable<Employee>{
+    return this.http.put<Employee>(this.url, employee, this.httpOptions).pipe(
+      catchError(this.handleError<any>('updateEmployee'))
+    );
+  }
+
   addEmployee(employee: Employee): void{
       // EMPLOYEES.push(employee);
   }

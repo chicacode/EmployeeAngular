@@ -24,9 +24,19 @@
                 <td>
                     <ul>
                         <li class="list-inline-item">
-                            <i class="fas fa-edit"></i> Edit
+
+                            <a routerLink="/update/{{employee.employeeId}}">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+                            <!-- <button (click)="editEmployee(employee)" class="btn btn-primary">
+                            </button> -->
+
                         </li>
-                        <li class="list-inline-item"> <i class="fas fa-trash"></i>Delete</li>
+                        <li class="list-inline-item">
+                            <button (click)="deleteEmployee(employee.employeeId)" class="btn btn-danger">
+                             <i class="fas fa-trash"></i>Delete
+                            </button>
+                        </li>
                     </ul>
                 </td>
 

@@ -32,4 +32,14 @@ export class EmployeesListComponent implements OnInit {
     // .subscribe(employees => this.employees = employees);
   }
 
+  // editEmployee(): void{
+  //   console.log('Editing');
+  //   this.router.navigate(['/update']);
+  // }
+
+  deleteEmployee(): void{
+    console.log('deleting');
+  }
+
+
 }

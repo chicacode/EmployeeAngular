@@ -26,9 +26,9 @@
 
 <h3 class="h1 m-1 d-flex justify-content-center p-2">Top Employees</h3>
 <div class="grid grid-pad">
-    <a *ngFor="let employee of employees" class="col-1-4" routerLink="/detail/{{employee.EmployeeId}}">
+    <a *ngFor="let employee of employees" class="col-1-4" routerLink="/detail/{{employee.employeeId}}">
         <div class="module hero">
-            <h4>{{employee.Name}}</h4>
+            <h4>{{employee.name}}</h4>
         </div>
     </a>
 </div>

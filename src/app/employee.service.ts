@@ -36,7 +36,11 @@ export class EmployeeService {
 
   getEmployee(id: number): Observable<Employee> {
     // return of(EMPLOYEES.find(employee => employee.EmployeeId === id));
-    return null;
+    const url = `${this.url}/${id}`;
+    console.log(id);
+    return this.http.get<Employee>(url).pipe(
+      catchError(this.handleError<Employee>(`getHero id=${id}`))
+    );
   }
 
   addEmployee(employee: Employee): void{

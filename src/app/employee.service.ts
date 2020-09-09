@@ -37,17 +37,19 @@ export class EmployeeService {
   getEmployee(id: number): Observable<Employee> {
     // return of(EMPLOYEES.find(employee => employee.EmployeeId === id));
     const url = `${this.url}/${id}`;
-    console.log(id);
     return this.http.get<Employee>(url).pipe(
-      catchError(this.handleError<Employee>(`getHero id=${id}`))
+      catchError(this.handleError<Employee>(`getEmployee id=${id}`))
     );
   }
 
   updateEmployee(employee: Employee): Observable<Employee>{
-    return this.http.put<Employee>(this.url, employee, this.httpOptions).pipe(
-      catchError(this.handleError<any>('updateEmployee'))
-    );
+
+    const url = `${this.url}/${employee.employeeId}`;
+    return this.http.put<Employee>(url, employee, this.httpOptions).pipe(
+          catchError(this.handleError<any>('updateHero'))
+      );
   }
+
 
   addEmployee(employee: Employee): void{
       // EMPLOYEES.push(employee);

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { EmployeeService } from '../../employee.service';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
+import { Location } from '@angular/common';
 
 import { Employee } from '../../models/employee';
 
@@ -17,7 +18,11 @@ export class EmployeeUpdateComponent implements OnInit {
   employeeId; any;
   employee: Employee;
 
-  constructor( private route: ActivatedRoute, private employeeService: EmployeeService, private formBuilder: FormBuilder) { }
+  constructor( 
+    private route: ActivatedRoute,
+    private employeeService: EmployeeService,
+    private formBuilder: FormBuilder,
+    private location: Location) { }
 
   ngOnInit(): void {
     this.employeeForm = this.formBuilder.group({
@@ -28,17 +33,10 @@ export class EmployeeUpdateComponent implements OnInit {
     });
 
     this.getEmployee();
-    this.route.params.subscribe(params => {
-      this.employeeId = params.id;
-      console.log('tiene ID');
-      this.employeeService.getEmployee(this.employeeId.toString())
-      .subscribe(data => {
-        this.loadForm(data), console.log("En la creacion");
-      } );
-    });
+
     }
 
-    loadForm(employee: Employee): any{
+    upData(employee: Employee): any{
       this.employeeForm.patchValue({
         Name: employee.name,
         LastName: employee.lastname,
@@ -47,23 +45,29 @@ export class EmployeeUpdateComponent implements OnInit {
     });
   }
 
-    update(): void{
-      console.log('Editando de nuevo my love');
-    }
-
     getEmployee(): void {
       const id = +this.route.snapshot.paramMap.get('id');
-      this.employeeService.getEmployee(id)
-        .subscribe(employee => this.employee = employee);
+      this.employeeId = id;
+      this.employeeService.getEmployee(this.employeeId.toString())
+        .subscribe(employee => {
+          this.employee = employee;
+          this.upData(employee);
+        });
+    }
+    goBack(): void {
+      this.location.back();
     }
 
-  // onSubmit(): void {
-  //   this.setIDtoStringInForm();
-  //   this.employeeService.addEmployee(this.employeeForm.value);
-  // }
-  // setIDtoStringInForm(): void{
-  //   // tslint:disable-next-line: max-line-length
-  //   this.employeeForm.setValue({ Name: this.employeeForm.value.Name, LastName: this.employeeForm.value.LastName, PositionJob: this.employeeForm.value.PositionJob, Salary: this.employeeForm.value.Salary } );
-  // }
+    update(): void{
+      const employee: Employee = Object.assign({}, this.employeeForm.value);
+      const id = +this.route.snapshot.paramMap.get('id');
+      this.employeeId = id;
+      // tslint:disable-next-line: radix
+      this.employeeId = parseInt( this.employeeId );
+      console.log('Hoola ' + typeof this.employeeId);
 
+      employee.employeeId = this.employeeId;
+      this.employeeService.updateEmployee(employee)
+      .subscribe (() => this.goBack());
+    }
 }

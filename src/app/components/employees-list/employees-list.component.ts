@@ -32,7 +32,6 @@ export class EmployeesListComponent implements OnInit {
     // .subscribe(employees => this.employees = employees);
   }
 
-
   delete(id: number): void{
     this.employeeService.deleteEmployee(id).subscribe(data => {
       alert('Employee with ID ' + id + ' has been deleted');

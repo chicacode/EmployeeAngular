@@ -56,6 +56,10 @@ export class EmployeeService {
       );
   }
 
+  deleteEmployee(id: number): Observable<Employee>{
+    const url = `${this.url}/${id}`;
+    return this.http.delete<Employee>(url);
+  }
 
   // tslint:disable-next-line: typedef
   private handleError<T>(operation = 'operation', result?: T) {

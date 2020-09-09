@@ -1,6 +1,6 @@
 <section class="sample-app-content">
     <h1 class="text-center">Add Employee</h1>
-    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" novalidate class="form">
+    <form [formGroup]="employeeForm" novalidate class="form">
 
         <div class="form-group">
             <label for="Name">First Name:</label>
@@ -23,6 +23,6 @@
             <input type="number" formControlName="Salary" placeholder="Salary" name="Salary" class="form-control" id="Salary">
             <div class="alert alert-danger" *ngIf="employeeForm.get('Salary').hasError('required') && employeeForm.get('Salary').touched">Job Position is required</div>
         </div>
-        <button class="btn btn-success" [disabled]="!employeeForm.valid">Save</button>
+        <button class="btn btn-success" [disabled]="!employeeForm.valid" (click)="create()">Save</button>
     </form>
 </section>

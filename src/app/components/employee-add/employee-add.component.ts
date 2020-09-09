@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../../employee.service';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
+import { Location } from '@angular/common';
 
+import { Employee } from '../../models/employee';
 
 @Component({
   selector: 'app-employee-add',
@@ -11,8 +13,12 @@ import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms'
 export class EmployeeAddComponent implements OnInit {
 
   employeeForm: FormGroup;
+  employee: Employee;
 
-  constructor(private employeeService: EmployeeService, private formBuilder: FormBuilder) { }
+  constructor(
+    private employeeService: EmployeeService,
+    private formBuilder: FormBuilder,
+    private location: Location) { }
 
   ngOnInit(): void {
     this.employeeForm = this.formBuilder.group({
@@ -23,12 +29,15 @@ export class EmployeeAddComponent implements OnInit {
     });
   }
 
-  onSubmit(): void {
-    this.setIDtoStringInForm();
-    this.employeeService.addEmployee(this.employeeForm.value);
+  goBack(): void {
+    this.location.back();
   }
-  setIDtoStringInForm(): void{
-    // tslint:disable-next-line: max-line-length
-    this.employeeForm.setValue({ Name: this.employeeForm.value.Name, LastName: this.employeeForm.value.LastName, PositionJob: this.employeeForm.value.PositionJob, Salary: this.employeeForm.value.Salary } );
+
+  create(): void {
+    const employee: Employee = Object.assign({}, this.employeeForm.value);
+    console.log(employee);
+    this.employeeService.addEmployee(employee)
+    .subscribe (() => this.goBack());
   }
+
 }

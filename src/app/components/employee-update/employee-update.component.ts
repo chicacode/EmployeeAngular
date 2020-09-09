@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { EmployeeService } from '../../employee.service';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { Location } from '@angular/common';
@@ -18,7 +18,7 @@ export class EmployeeUpdateComponent implements OnInit {
   employeeId; any;
   employee: Employee;
 
-  constructor( 
+  constructor(
     private route: ActivatedRoute,
     private employeeService: EmployeeService,
     private formBuilder: FormBuilder,
@@ -64,7 +64,7 @@ export class EmployeeUpdateComponent implements OnInit {
       this.employeeId = id;
       // tslint:disable-next-line: radix
       this.employeeId = parseInt( this.employeeId );
-      console.log('Hoola ' + typeof this.employeeId);
+      console.log( typeof this.employeeId);
 
       employee.employeeId = this.employeeId;
       this.employeeService.updateEmployee(employee)

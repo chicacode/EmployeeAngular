@@ -33,27 +33,29 @@ export class EmployeeService {
     );
   }
 
-
   getEmployee(id: number): Observable<Employee> {
     // return of(EMPLOYEES.find(employee => employee.EmployeeId === id));
     const url = `${this.url}/${id}`;
-    return this.http.get<Employee>(url).pipe(
+    return this.http.get<Employee>(url)
+    .pipe(
       catchError(this.handleError<Employee>(`getEmployee id=${id}`))
     );
   }
 
-  updateEmployee(employee: Employee): Observable<Employee>{
+  addEmployee(employee: Employee): Observable<Employee>{
+    return this.http.post<Employee>(this.url, employee, this.httpOptions)
+    .pipe(
+      catchError(this.handleError<any>('updateHero'))
+  );
+}
 
+  updateEmployee(employee: Employee): Observable<Employee>{
     const url = `${this.url}/${employee.employeeId}`;
     return this.http.put<Employee>(url, employee, this.httpOptions).pipe(
           catchError(this.handleError<any>('updateHero'))
       );
   }
 
-
-  addEmployee(employee: Employee): void{
-      // EMPLOYEES.push(employee);
-  }
 
   // tslint:disable-next-line: typedef
   private handleError<T>(operation = 'operation', result?: T) {

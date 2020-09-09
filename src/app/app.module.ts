@@ -10,6 +10,8 @@ import { EmployeeDetailComponent } from './components/employee-detail/employee-d
 import { EmployeesListComponent } from './components/employees-list/employees-list.component';
 import { EmployeeUpdateComponent } from './components/employee-update/employee-update.component';
 import { EmployeeAddComponent } from './components/employee-add/employee-add.component';
+import { HeaderComponent } from './components/shared/header/header.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { EmployeeAddComponent } from './components/employee-add/employee-add.com
     EmployeeDetailComponent,
     EmployeesListComponent,
     EmployeeUpdateComponent,
-    EmployeeAddComponent
+    EmployeeAddComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

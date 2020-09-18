@@ -31,6 +31,10 @@ h4 {
     position: relative;
 }
 
+a {
+    color: #00000e;
+}
+
 .grid {
     margin: 0;
 }
@@ -53,6 +57,12 @@ h4 {
 }
 
 .module:hover {
+    background-color: #eee;
+    cursor: pointer;
+    color: #607d8b;
+}
+
+.h4 a:hover {
     background-color: #eee;
     cursor: pointer;
     color: #607d8b;

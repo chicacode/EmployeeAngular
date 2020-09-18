@@ -41,10 +41,10 @@ export class EmployeeUpdateComponent implements OnInit {
     upData(employee: Employee): any{
       this.employeeForm.patchValue({
         Name: employee.name,
-        LastName: employee.lastname,
+        LastName: employee.lastName,
         PositionJob: employee.positionJob,
         Salary: employee.salary,
-        UserName: employee.username,
+        UserName: employee.userName,
         Password: employee.password
     });
   }

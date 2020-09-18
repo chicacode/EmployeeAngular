@@ -1,47 +1,52 @@
-<h2 class="h2 text-center mt-2">ERP Employess</h2>
+<section class="sample-app-content">
+    <nav class="navbar  navbar-expand-sm navbar-dark bg-dark">
+        <a routerLink="/dashboard" class="nav-link text-white">Dashboard</a>
+        <a routerLink="/addemployee" class="nav-link text-white">Add Employees</a>
+    </nav>
+    <h2 class="h2 text-center mt-2">ERP Employess</h2>
+    <div class="card-body">
+        <table class="table table-bordered table-center">
+            <thead>
+                <tr>
+                    <th>Employee Id</th>
+                    <th>Name</th>
+                    <th>Lastname</th>
+                    <th>Job Position</th>
+                    <th>salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employees" class="employees">
+                    <td><span class="badge">{{employee.employeeId}}</span></td>
+                    <a routerLink="/detail/{{employee.employeeId}}">
+                        <td>{{employee.name}}</td>
+                    </a>
 
-<div class="card-body">
-    <table class="table table-bordered table-center">
-        <thead>
-            <tr>
-                <th>Employee Id</th>
-                <th>Name</th>
-                <th>Lastname</th>
-                <th>Job Position</th>
-                <th>salary</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let employee of employees" class="employees">
-                <td><span class="badge">{{employee.employeeId}}</span></td>
-                <a routerLink="/detail/{{employee.employeeId}}">
-                    <td>{{employee.name}}</td>
-                </a>
+                    <td style="color:black;"> {{employee.lastName}}</td>
+                    <td>{{employee.positionJob}}</td>
+                    <td>{{employee.salary}} </td>
+                    <td>
+                        <ul>
+                            <li class="list-inline-item">
 
-                <td style="color:black;"> {{employee.lastName}}</td>
-                <td>{{employee.positionJob}}</td>
-                <td>{{employee.salary}} </td>
-                <td>
-                    <ul>
-                        <li class="list-inline-item">
-
-                            <a routerLink="/update/{{employee.employeeId}}">
-                                <i class="fas fa-edit"></i> Edit
-                            </a>
-                            <!-- <button (click)="editEmployee(employee)" class="btn btn-primary">
+                                <a routerLink="/update/{{employee.employeeId}}">
+                                    <i class="fas fa-edit"></i> Edit
+                                </a>
+                                <!-- <button (click)="editEmployee(employee)" class="btn btn-primary">
                             </button> -->
 
-                        </li>
-                        <li class="list-inline-item">
-                            <button (click)="delete(employee.employeeId)" class="btn btn-danger">
+                            </li>
+                            <li class="list-inline-item">
+                                <button (click)="delete(employee.employeeId)" class="btn btn-danger">
                              <i class="fas fa-trash"></i>Delete
                             </button>
-                        </li>
-                    </ul>
-                </td>
+                            </li>
+                        </ul>
+                    </td>
 
-            </tr>
-        </tbody>
+                </tr>
+            </tbody>
 
-    </table>
-</div>
+        </table>
+    </div>
+</section>

@@ -1,7 +1,10 @@
 <section class="sample-app-content">
+    <nav class="navbar  navbar-expand-sm navbar-dark bg-dark">
+        <a routerLink="/dashboard" class="nav-link text-white">Dashboard</a>
+        <a routerLink="/employees" class="nav-link text-white">Employees</a>
+    </nav>
     <h1 class="text-center">Add Employee</h1>
     <form [formGroup]="employeeForm" novalidate class="form">
-
         <div class="form-group">
             <label for="Name">First Name:</label>
             <input type="text" formControlName="Name" placeholder="Name" name="Name" class="form-control" id="Name">

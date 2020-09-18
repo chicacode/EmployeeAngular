@@ -29,7 +29,9 @@ export class EmployeeUpdateComponent implements OnInit {
       Name: ['', Validators.required],
       LastName: ['', Validators.required],
       PositionJob: ['', Validators.required],
-      Salary: ['', Validators.required]
+      Salary: ['', Validators.required],
+      UserName:  ['', Validators.required],
+      Password:  ['', Validators.required]
     });
 
     this.getEmployee();
@@ -41,7 +43,9 @@ export class EmployeeUpdateComponent implements OnInit {
         Name: employee.name,
         LastName: employee.lastname,
         PositionJob: employee.positionJob,
-        Salary: employee.salary
+        Salary: employee.salary,
+        UserName: employee.username,
+        Password: employee.password
     });
   }
 

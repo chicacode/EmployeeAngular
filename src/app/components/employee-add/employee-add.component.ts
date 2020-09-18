@@ -25,7 +25,9 @@ export class EmployeeAddComponent implements OnInit {
       Name: ['', Validators.required],
       LastName: ['', Validators.required],
       PositionJob: ['', Validators.required],
-      Salary: ['', Validators.required]
+      Salary: ['', Validators.required],
+      UserName:  ['', Validators.required],
+      Password:  ['', Validators.required]
     });
   }
 

@@ -17,6 +17,12 @@ import { EmployeesListComponent } from '../components/employees-list/employees-l
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    EmployeeAddComponent,
+    EmployeeDetailComponent,
+    EmployeeUpdateComponent,
+    EmployeesListComponent
   ]
 })
 export class EmployeeModule { }

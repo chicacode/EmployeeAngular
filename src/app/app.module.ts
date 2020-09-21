@@ -14,6 +14,11 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 // Modules
 import { EmployeeModule } from './modules/employee/employee/employee.module';
 import { InventoryModule } from './modules/inventory/inventory/inventory.module';
+import { OrdersModule } from './modules/sales/orders/orders.module';
+import { AddressComponent } from './modules/crm/components/address/address.component';
+import { CustomerComponent } from './modules/crm/components/customer/customer.component';
+import { PerComponent } from './modules/crm/components/per/per.component';
+import { PersonComponent } from './modules/crm/components/person/person.component';
 
 
 
@@ -23,7 +28,11 @@ import { InventoryModule } from './modules/inventory/inventory/inventory.module'
     AppComponent,
     DashboardComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AddressComponent,
+    CustomerComponent,
+    PerComponent,
+    PersonComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +41,8 @@ import { InventoryModule } from './modules/inventory/inventory/inventory.module'
     FormsModule,
     ReactiveFormsModule,
     EmployeeModule,
-    InventoryModule
+    InventoryModule,
+    OrdersModule
   ],
   providers: [],
   bootstrap: [AppComponent]

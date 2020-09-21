@@ -5,13 +5,15 @@ import { ProductComponent } from '../components/product/product.component';
 import { WarehouseComponent } from '../components/warehouse/warehouse.component';
 import { StorageComponent } from '../components/storage/storage.component';
 import { MovementsComponent } from '../components/movements/movements.component';
+import { CategoryComponent } from '../components/category/category.component';
 
 @NgModule({
   declarations: [
     ProductComponent,
     WarehouseComponent,
     StorageComponent,
-    MovementsComponent
+    MovementsComponent,
+    CategoryComponent
   ],
   imports: [
     CommonModule
@@ -20,7 +22,8 @@ import { MovementsComponent } from '../components/movements/movements.component'
     ProductComponent,
     WarehouseComponent,
     StorageComponent,
-    MovementsComponent
+    MovementsComponent,
+    CategoryComponent
   ]
 })
 export class InventoryModule { }

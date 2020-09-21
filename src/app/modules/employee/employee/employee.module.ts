@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { EmployeeAddComponent } from '../components/employee-add/employee-add.component';
 import {EmployeeDetailComponent } from '../components/employee-detail/employee-detail.component';
@@ -16,7 +17,9 @@ import { EmployeesListComponent } from '../components/employees-list/employees-l
     EmployeesListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     EmployeeAddComponent,

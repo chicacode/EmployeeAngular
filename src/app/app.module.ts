@@ -17,8 +17,6 @@ import { InventoryModule } from './modules/inventory/inventory/inventory.module'
 import { OrdersModule } from './modules/sales/orders/orders.module';
 import { CrmModule } from './modules/crm/crm/crm.module';
 
-import { from } from 'rxjs';
-
 
 @NgModule({
   declarations: [

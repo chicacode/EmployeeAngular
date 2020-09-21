@@ -15,10 +15,9 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { EmployeeModule } from './modules/employee/employee/employee.module';
 import { InventoryModule } from './modules/inventory/inventory/inventory.module';
 import { OrdersModule } from './modules/sales/orders/orders.module';
-import { AddressComponent } from './modules/crm/components/address/address.component';
-import { CustomerComponent } from './modules/crm/components/customer/customer.component';
-import { PerComponent } from './modules/crm/components/per/per.component';
-import { PersonComponent } from './modules/crm/components/person/person.component';
+import { CrmModule } from './modules/crm/crm/crm.module';
+
+import { from } from 'rxjs';
 
 
 
@@ -28,11 +27,7 @@ import { PersonComponent } from './modules/crm/components/person/person.componen
     AppComponent,
     DashboardComponent,
     HeaderComponent,
-    FooterComponent,
-    AddressComponent,
-    CustomerComponent,
-    PerComponent,
-    PersonComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +37,8 @@ import { PersonComponent } from './modules/crm/components/person/person.componen
     ReactiveFormsModule,
     EmployeeModule,
     InventoryModule,
-    OrdersModule
+    OrdersModule,
+    CrmModule
   ],
   providers: [],
   bootstrap: [AppComponent]

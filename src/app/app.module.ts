@@ -20,8 +20,6 @@ import { CrmModule } from './modules/crm/crm/crm.module';
 import { from } from 'rxjs';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

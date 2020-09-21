@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../../employee.service';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { Location } from '@angular/common';
 
-import { Employee } from '../../models/employee';
+import { Employee } from '../../../../models/employee';
+import { EmployeeService } from '../../../../employee.service';
 
 @Component({
   selector: 'app-employee-add',

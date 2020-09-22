@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'sales',
     loadChildren: () => import('./modules/sales/orders/orders.module').then(m => m.OrdersModule)
   },
+  {
+    path: 'crm',
+    loadChildren: () => import('./modules/crm/crm/crm.module').then(m => m.CrmModule)
+  },
 ];
 
 @NgModule({

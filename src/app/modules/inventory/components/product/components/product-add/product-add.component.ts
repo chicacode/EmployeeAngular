@@ -29,6 +29,7 @@ export class ProductAddComponent implements OnInit {
       CategoryId: ['', Validators.required],
     });
   }
+  
   goBack(): void {
     this.location.back();
   }

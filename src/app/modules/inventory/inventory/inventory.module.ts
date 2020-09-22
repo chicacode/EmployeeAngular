@@ -6,6 +6,7 @@ import { InventoryRoutingModule } from './inventory-routing.module';
 import { CategoryComponent } from '../components/category/category/category.component';
 import { ProductListComponent } from '../components/product/components/product-list/product-list.component';
 import { ProductAddComponent } from '../components/product/components/product-add/product-add.component';
+import { ProductUpdateComponent } from '../components/product/components/product-update/product-update.component';
 import { WarehouseComponent } from '../components/warehouse/warehouse/warehouse.component';
 import { StorageComponent } from '../components/storage/storage/storage.component';
 import { MovementsComponent } from '../components/movements/movements/movements.component';
@@ -16,6 +17,7 @@ import { MovementsComponent } from '../components/movements/movements/movements.
     CategoryComponent,
     ProductListComponent,
     ProductAddComponent,
+    ProductUpdateComponent,
     WarehouseComponent,
     StorageComponent,
     MovementsComponent
@@ -30,6 +32,7 @@ import { MovementsComponent } from '../components/movements/movements/movements.
     CategoryComponent,
     ProductListComponent,
     ProductAddComponent,
+    ProductUpdateComponent,
     WarehouseComponent,
     StorageComponent,
     MovementsComponent

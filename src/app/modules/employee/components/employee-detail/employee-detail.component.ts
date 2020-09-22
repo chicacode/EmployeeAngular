@@ -13,7 +13,11 @@ import { EmployeeService } from '../../../../employee.service';
 export class EmployeeDetailComponent implements OnInit {
   employee: Employee;
 
-  constructor(  private route: ActivatedRoute, private employeeService: EmployeeService, private location: Location) { }
+  constructor(
+     private route: ActivatedRoute,
+     private employeeService: EmployeeService,
+     private location: Location
+    ) { }
 
   ngOnInit(): void {
     this.getEmployee();

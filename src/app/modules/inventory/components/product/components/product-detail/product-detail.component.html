@@ -1,1 +1,13 @@
-<p>product-detail works!</p>
+<div class="card mx-auto mt-3" style="width: 18rem;" *ngIf="product">
+    <div class="card-header">
+        Product Detail
+    </div>
+    <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted"><span> <strong>Id: </strong></span>{{product.productId}}</h6>
+        <div><span><strong>Product Name:</strong> </span>{{product.name}}</div>
+        <p class="card-text"><span><strong>Description:</strong> </span>{{product.description}}</p>
+        <div><span><strong>Category Id:</strong> </span>{{product.categoryId}}</div>
+        <div><span><strong>Total Quantity:</strong> </span>{{product.totalQuantity}}</div>
+        <button type="button" class="btn btn-info" (click)="goBack()">go back</button>
+    </div>
+</div>

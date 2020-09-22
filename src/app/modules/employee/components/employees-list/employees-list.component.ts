@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 import { Employee } from '../../../../models/employee';
 import { EmployeeService } from '../../../../employee.service';
@@ -17,9 +17,10 @@ export class EmployeesListComponent implements OnInit {
   employees: Employee[];
 
  // Dependency injection private property
- constructor(private employeeService: EmployeeService) { }
+ constructor(private employeeService: EmployeeService, private router: Router) { }
 
   ngOnInit(): void {
+    console.log('Hoola', this.employeeService);
     this.getEmployees();
   }
 

@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   {
-    path: 'employess',
+    path: 'employee',
     loadChildren: () => import('./modules/employee/employee/employee.module').then(m => m.EmployeeModule)
   }
 ];

@@ -26,6 +26,28 @@ export class ProductService {
     );
   }
 
+  getProduct(id: number): Observable<Product> {
+    const url = `${this.url}/${id}`;
+    return this.http.get<Product>(url)
+    .pipe(
+      catchError(this.handleError<Product>(`getProduct id=${id}`))
+    );
+  }
+
+  addProduct(product: Product): Observable<Product>{
+    return this.http.post<Product>(this.url, product, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<any>('addProduct'))
+    );
+  }
+
+  updateProduct(product: Product): Observable<Product>{
+    const url = `${this.url}/${product.productId}`;
+    return this.http.put<Product>(url, product, this.httpOptions).pipe(
+          catchError(this.handleError<any>('updateProduct'))
+      );
+  }
+
   // tslint:disable-next-line: typedef
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

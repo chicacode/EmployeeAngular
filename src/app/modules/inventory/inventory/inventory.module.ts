@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { InventoryRoutingModule } from './inventory-routing.module';
 
 import { CategoryComponent } from '../components/category/category/category.component';
-import { ProductComponent } from '../components/product/product/product.component';
+import { ProductListComponent } from '../components/product/components/product-list/product-list.component';
 import { WarehouseComponent } from '../components/warehouse/warehouse/warehouse.component';
 import { StorageComponent } from '../components/storage/storage/storage.component';
 import { MovementsComponent } from '../components/movements/movements/movements.component';
@@ -12,7 +12,7 @@ import { MovementsComponent } from '../components/movements/movements/movements.
 @NgModule({
   declarations: [
     CategoryComponent,
-    ProductComponent,
+    ProductListComponent,
     WarehouseComponent,
     StorageComponent,
     MovementsComponent
@@ -23,7 +23,7 @@ import { MovementsComponent } from '../components/movements/movements/movements.
   ],
   exports: [
     CategoryComponent,
-    ProductComponent,
+    ProductListComponent,
     WarehouseComponent,
     StorageComponent,
     MovementsComponent

@@ -1,1 +1,55 @@
-<p>product-list works!</p>
+<section class="sample-app-content">
+    <nav class="navbar  navbar-expand-sm navbar-dark bg-dark">
+        <a routerLink="/dashboard" class="nav-link text-white">Dashboard</a>
+        <a routerLink="/addproduct" class="nav-link text-white">Add Products</a>
+    </nav>
+    <h2 class="h2 text-center mt-2">ERP Employess</h2>
+    <div class="card-body">
+        <table class="table table-bordered table-center">
+            <thead>
+                <tr>
+                    <th>Product Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Total Quantity</th>
+                    <th>Category Id</th>
+                    <th>Category</th>
+                    <th>Storages</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products" class="products">
+                    <td><span class="badge">{{product.productId}}</span></td>
+                    <a routerLink="/detail/{{product.productId}}">
+                        <td>{{product.name}}</td>
+                    </a>
+
+                    <td style="color:black;"> {{product.description}}</td>
+                    <td>{{product.totalQuantity}} </td>
+                    <td>{{product.categoryId}} </td>
+                    <td>{{product.category}}</td>
+
+                    <td>{{product.storageList}} </td>
+                    <td>
+                        <ul>
+                            <li class="list-inline-item">
+
+                                <!-- <a routerLink="/update/{{employee.employeeId}}">
+                                    <i class="fas fa-edit"></i> Edit
+                                </a> -->
+                                <!-- <button (click)="editEmployee(employee)" class="btn btn-primary">
+                            </button> -->
+
+                            </li>
+                            <li class="list-inline-item">
+                                <!-- <button (click)="delete(employee.employeeId)" class="btn btn-danger">
+                             <i class="fas fa-trash"></i>Delete
+                            </button> -->
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

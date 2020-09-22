@@ -1,10 +1,11 @@
 import { Category } from './category';
 
 export interface Product {
-    ProductId: number;
+    productId: number;
     name: string;
     description: string;
-    totalQuantity: string;
-    CategoryId: number;
+    totalQuantity: number;
+    categoryId: number;
     category: Category;
+    storageList: Storage[];
 }

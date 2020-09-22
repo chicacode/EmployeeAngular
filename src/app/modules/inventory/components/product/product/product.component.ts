@@ -10,6 +10,7 @@ export class ProductComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('Hola desde inventario');
   }
 
 }

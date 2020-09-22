@@ -10,7 +10,11 @@ const routes: Routes = [
   {
     path: 'employee',
     loadChildren: () => import('./modules/employee/employee/employee.module').then(m => m.EmployeeModule)
-  }
+  },
+  {
+    path: 'inventory',
+    loadChildren: () => import('./modules/inventory/inventory/inventory.module').then(m => m.InventoryModule)
+  },
 ];
 
 @NgModule({
@@ -18,3 +22,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

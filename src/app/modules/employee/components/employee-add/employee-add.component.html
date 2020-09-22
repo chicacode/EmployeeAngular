@@ -28,12 +28,12 @@
         </div>
         <div class="form-group">
             <label for="UserName">Username</label>
-            <input type="number" formControlName="UserName" placeholder="UserName" name="UserName" class="form-control" id="UserName">
+            <input type="text" formControlName="UserName" placeholder="UserName" name="UserName" class="form-control" id="UserName">
             <div class="alert alert-danger" *ngIf="employeeForm.get('UserName').hasError('required') && employeeForm.get('UserName').touched">UserName is required</div>
         </div>
         <div class="form-group">
             <label for="Password">Password</label>
-            <input type="number" formControlName="Password" placeholder="Password" name="Password" class="form-control" id="Password">
+            <input type="text" formControlName="Password" placeholder="Password" name="Password" class="form-control" id="Password">
             <div class="alert alert-danger" *ngIf="employeeForm.get('Password').hasError('required') && employeeForm.get('Password').touched">Password is required</div>
         </div>
         <button class="btn btn-success" [disabled]="!employeeForm.valid" (click)="create()">Save</button>

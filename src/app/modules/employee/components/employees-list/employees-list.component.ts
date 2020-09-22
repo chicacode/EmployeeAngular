@@ -31,7 +31,6 @@ export class EmployeesListComponent implements OnInit {
       response => {this.employees = response; console.log(response); },
       error => {console.log('There was a problem to get employees'); }
     );
-    // .subscribe(employees => this.employees = employees);
   }
 
   delete(id: number): void{

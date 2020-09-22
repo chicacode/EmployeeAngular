@@ -24,4 +24,11 @@ export class ProductListComponent implements OnInit {
       response => { this.products = response;  console.log(response); }
     );
   }
+
+  delete(id: number): void{
+    this.productService.deleteProduct(id).subscribe(data => {
+      alert('Product with ID ' + id + ' has been deleted');
+      location.reload();
+    });
+  }
 }

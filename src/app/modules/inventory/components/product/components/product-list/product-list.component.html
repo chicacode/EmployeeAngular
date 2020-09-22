@@ -1,9 +1,9 @@
 <section class="sample-app-content">
     <nav class="navbar  navbar-expand-sm navbar-dark bg-dark">
         <a routerLink="/dashboard" class="nav-link text-white">Dashboard</a>
-        <a routerLink="/addproduct" class="nav-link text-white">Add Products</a>
+        <a routerLink="/addproduct" class="nav-link text-white">Add Product</a>
     </nav>
-    <h2 class="h2 text-center mt-2">ERP Employess</h2>
+    <h2 class="h2 text-center mt-2">Product List</h2>
     <div class="card-body">
         <table class="table table-bordered table-center">
             <thead>
@@ -34,17 +34,14 @@
                         <ul>
                             <li class="list-inline-item">
 
-                                <!-- <a routerLink="/update/{{employee.employeeId}}">
+                                <a routerLink="/updatepro/{{product.productId}}">
                                     <i class="fas fa-edit"></i> Edit
-                                </a> -->
-                                <!-- <button (click)="editEmployee(employee)" class="btn btn-primary">
-                            </button> -->
-
+                                </a>
                             </li>
                             <li class="list-inline-item">
-                                <!-- <button (click)="delete(employee.employeeId)" class="btn btn-danger">
+                                <button (click)="delete(product.productId)" class="btn btn-danger">
                              <i class="fas fa-trash"></i>Delete
-                            </button> -->
+                            </button>
                             </li>
                         </ul>
                     </td>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 
 import { Product } from '../../../../../models/product';
 @Injectable({
@@ -46,6 +46,11 @@ export class ProductService {
     return this.http.put<Product>(url, product, this.httpOptions).pipe(
           catchError(this.handleError<any>('updateProduct'))
       );
+  }
+
+  deleteProduct(id: number): Observable<Product>{
+    const url = `${this.url}/${id}`;
+    return this.http.delete<Product>(url);
   }
 
   // tslint:disable-next-line: typedef

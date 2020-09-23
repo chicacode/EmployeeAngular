@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 
-import { Employee } from './models/employee';
+import { Employee } from '../../../models/employee';
 
 
 @Injectable({

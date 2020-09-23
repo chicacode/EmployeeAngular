@@ -12,8 +12,8 @@ import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 
 // Modules
-import { EmployeeModule } from './modules/employee/employee/employee.module';
-import { InventoryModule } from './modules/inventory/inventory/inventory.module';
+import { EmployeeModule } from './modules/employee/employee.module';
+import { InventoryModule } from './modules/inventory/inventory.module';
 import { OrdersModule } from './modules/sales/orders/orders.module';
 import { CrmModule } from './modules/crm/crm/crm.module';
 

@@ -6,7 +6,6 @@ export interface Order {
     ProductId: number;
     ProductQuantity: number;
     EmployeeId: number;
-    OrderPriorityId: number;
     OrderState: OrderState;
     CreationOrder: Date;
 }

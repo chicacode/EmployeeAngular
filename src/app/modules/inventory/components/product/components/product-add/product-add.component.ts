@@ -14,6 +14,11 @@ export class ProductAddComponent implements OnInit {
 
   productForm: FormGroup;
   product: Product;
+  categories = [
+    { id: 0, name: 'Clothes' },
+    { id: 1, name: 'Merchandise' },
+    { id: 2, name: 'Minor' }
+  ];
 
   constructor(
     private productService: ProductService,
@@ -29,7 +34,6 @@ export class ProductAddComponent implements OnInit {
       CategoryId: ['', Validators.required],
     });
   }
-  
   goBack(): void {
     this.location.back();
   }

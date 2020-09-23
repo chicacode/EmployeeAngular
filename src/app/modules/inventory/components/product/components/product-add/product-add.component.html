@@ -12,8 +12,8 @@
         </div>
         <div class="form-group">
             <label for="Description">Product Description:</label>
-            <input type="text" formControlName="Description" placeholder="Description" name="Description" class="form-control" id="LastName">
-            <div class="alert alert-danger" *ngIf="productForm.get('Description').hasError('required') && productForm.get('LastName').touched">Description is required</div>
+            <textarea class="form-control" formControlName="Description" id="Description" rows="3"></textarea>
+            <div class="alert alert-danger" *ngIf="productForm.get('Description').hasError('required') && productForm.get('Description').touched">Description is required</div>
         </div>
 
         <div class="form-group">
@@ -23,10 +23,13 @@
         </div>
         <div class="form-group">
             <label for="CategoryId">Category Id</label>
-            <input type="number" formControlName="CategoryId" placeholder="CategoryId" name="CategoryId" class="form-control" id="CategoryId">
+            <!-- <input type="number" formControlName="CategoryId" placeholder="CategoryId" name="CategoryId" class="form-control" id="CategoryId"> -->
+            <select class="form-control" formControlName="CategoryId">
+                <option *ngFor="let oneOption of categories" [ngValue]="oneOption" id="CategoryId">{{oneOption.name}}</option>
+            </select>
+
             <div class="alert alert-danger" *ngIf="productForm.get('CategoryId').hasError('required') && productForm.get('CategoryId').touched">category id is required</div>
         </div>
-
         <button class="btn btn-success" [disabled]="!productForm.valid" (click)="create()">Save</button>
     </form>
 </section>

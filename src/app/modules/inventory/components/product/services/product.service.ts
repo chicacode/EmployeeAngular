@@ -16,7 +16,7 @@ export class ProductService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
   constructor( private http: HttpClient ){
-    this.url = 'https://localhost:44333/api/products';
+    this.url = 'https://localhost:44342/api/products';
   }
 
   getProducts(): Observable<Product[]>{

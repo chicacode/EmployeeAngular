@@ -1,1 +1,43 @@
-<p>customer-list works!</p>
+<section class="sample-app-content">
+    <nav class="navbar  navbar-expand-sm navbar-dark bg-dark">
+        <a routerLink="/dashboard" class="nav-link text-white">Dashboard</a>
+        <a routerLink="/addcustomer" class="nav-link text-white">Add customers</a>
+    </nav>
+    <h2 class="h2 text-center mt-2">ERP Customers</h2>
+    <div class="card-body">
+        <table class="table table-bordered table-center">
+            <thead>
+                <tr>
+                    <th>Customer Id</th>
+                    <th>Name</th>
+                    <th>Lastname</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let customer of customers" class="customers">
+                    <td><span class="badge">{{customer.customerId}}</span></td>
+                    <a routerLink="/detail/{{customer.customerId}}">
+                        <td>{{customer.name}}</td>
+                    </a>
+
+                    <td style="color:black;"> {{customer.lastName}}</td>
+                    <td>
+                        <ul>
+                            <li class="list-inline-item">
+
+                                <a routerLink="/update/{{customer.CustomerId}}">
+                                    <i class="fas fa-edit"></i> Edit
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <button (click)="delete(customer.CustomerId)" class="btn btn-danger">
+                             <i class="fas fa-trash"></i>Delete
+                            </button>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

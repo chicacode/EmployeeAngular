@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CrmRoutingModule } from './crm-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AddressComponent } from './components/address/address/address.component';
 import { CustomerAddComponent } from './components/customer/components/customer-add/customer-add.component';
@@ -21,7 +22,9 @@ import { PersonComponent } from './components/person/person/person.component';
   ],
   imports: [
     CommonModule,
-    CrmRoutingModule
+    CrmRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     AddressComponent,

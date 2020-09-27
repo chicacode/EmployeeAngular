@@ -1,0 +1,16 @@
+<section class="sample-app-content">
+    <nav class="navbar  navbar-expand-sm navbar-dark bg-dark">
+        <a routerLink="/dashboard" class="nav-link text-white">Dashboard</a>
+        <a routerLink="/categories" class="nav-link text-white">Categories</a>
+    </nav>
+    <h1 class="text-center">Add New Category</h1>
+    <form [formGroup]="categoryForm" novalidate class="form">
+        <div class="form-group">
+            <label for="Name">Name:</label>
+            <input type="text" formControlName="Name" placeholder="Name" name="Name" class="form-control" id="Name">
+            <div class="alert alert-danger" *ngIf="categoryForm.get('Name').hasError('required') && categoryForm.get('Name').touched">Name is required</div>
+        </div>
+
+        <button class="btn btn-success" [disabled]="!categoryForm.valid" (click)="create()">Save</button>
+    </form>
+</section>

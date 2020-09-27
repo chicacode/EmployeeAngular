@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CategoryComponent } from './components/category/category/category.component';
+import { CategoryListComponent } from './components/category/category-list/category-list.component';
 import { MovementsComponent } from './components/movements/movements/movements.component';
 import { ProductListComponent } from './components/product/components/product-list/product-list.component';
 import { ProductDetailComponent } from './components/product/components/product-detail/product-detail.component';
@@ -13,7 +13,7 @@ import { StorageComponent } from './components/storage/storage/storage.component
 import { WarehouseComponent } from './components/warehouse/warehouse/warehouse.component';
 
 const routes: Routes = [
-    { path: 'category', component: CategoryComponent},
+    { path: 'categories', component: CategoryListComponent},
     { path: 'movements', component: MovementsComponent},
     { path: 'products', component: ProductListComponent },
     { path: 'detailpro/:id', component: ProductDetailComponent },

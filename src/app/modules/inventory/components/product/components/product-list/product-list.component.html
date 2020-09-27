@@ -2,6 +2,7 @@
     <nav class="navbar  navbar-expand-sm navbar-dark bg-dark">
         <a routerLink="/dashboard" class="nav-link text-white">Dashboard</a>
         <a routerLink="/addproduct" class="nav-link text-white">Add Product</a>
+        <a routerLink="/categories" class="nav-link text-white">Categories</a>
     </nav>
     <h2 class="h2 text-center mt-2">Product List</h2>
     <div class="card-body">
@@ -26,7 +27,11 @@
 
                     <td style="color:black;"> {{product.description}}</td>
                     <td>{{product.totalQuantity}} </td>
-                    <td>{{product.categoryId}} </td>
+                    <a routerLink="/categories/{{product.categoryId}}">
+                        <td>{{product.categoryId}} </td>
+                    </a>
+
+
                     <td>{{product.category}}</td>
 
                     <td>{{product.storageList}} </td>

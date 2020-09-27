@@ -21,10 +21,10 @@ export class CategoryService {
     this.url = 'https://localhost:44342/api/categories';
    }
 
-   getCategorys(): Observable<Category[]>{
+   getCategories(): Observable<Category[]>{
     return this.http.get<Category[]>(this.url)
     .pipe(
-      catchError(this.handleError<Category[]>('getCategorys', []))
+      catchError(this.handleError<Category[]>('getCategories', []))
     );
   }
 

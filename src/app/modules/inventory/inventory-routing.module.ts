@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { CategoryAddComponent } from './components/category/category-add/category-add.component';
 import { CategoryListComponent } from './components/category/category-list/category-list.component';
 import { MovementsComponent } from './components/movements/movements/movements.component';
 import { ProductListComponent } from './components/product/components/product-list/product-list.component';
@@ -14,6 +15,7 @@ import { WarehouseComponent } from './components/warehouse/warehouse/warehouse.c
 
 const routes: Routes = [
     { path: 'categories', component: CategoryListComponent},
+    { path: 'addcategory', component: CategoryAddComponent},
     { path: 'movements', component: MovementsComponent},
     { path: 'products', component: ProductListComponent },
     { path: 'detailpro/:id', component: ProductDetailComponent },

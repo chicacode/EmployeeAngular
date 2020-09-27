@@ -30,6 +30,6 @@
 
             <div class="alert alert-danger" *ngIf="productForm.get('CategoryId').hasError('required') && productForm.get('CategoryId').touched">category id is required</div>
         </div>
-        <button class="btn btn-success" [disabled]="!productForm.valid" (click)="create()">Save</button>
+        <button class="btn btn-success" [disabled]="!productForm.valid" (click)="create()">Add Product</button>
     </form>
 </section>

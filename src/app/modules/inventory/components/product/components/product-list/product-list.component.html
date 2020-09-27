@@ -7,6 +7,7 @@
     <h2 class="h2 text-center mt-2">Product List</h2>
     <div class="card-body">
         <table class="table table-bordered table-center">
+
             <thead>
                 <tr>
                     <th>Product Id</th>
@@ -33,8 +34,9 @@
 
 
                     <td>{{product.category}}</td>
-
-                    <td>{{product.storageList}} </td>
+                    <a routerLink="/storage/{{product.storageList}}">
+                        <td>{{product.storageList}} </td>
+                    </a>
                     <td>
                         <ul>
                             <li class="list-inline-item">

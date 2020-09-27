@@ -1,1 +1,46 @@
-<p>storage works!</p>
+<section class="sample-app-content">
+    <nav class="navbar  navbar-expand-sm navbar-dark bg-dark">
+        <a routerLink="/dashboard" class="nav-link text-white">Dashboard</a>
+    </nav>
+    <h2 class="h2 text-center mt-2">Storages</h2>
+    <div class="card-body">
+        <table class="table table-bordered table-center">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Warehouse</th>
+                    <th>lastUpdate</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let storage of storages" class="products">
+                    <td><span class="badge">{{storage.StorageId}}</span></td>
+                    <a routerLink="/detailpro/{{storage.productId}}">
+                        <td>{{storage.productId}}</td>
+                    </a>
+
+                    <td style="color:black;"> {{storage.partialQuantity}}</td>
+                    <td>{{storage.WarehouseId}} </td>
+
+                    <td>
+                        <ul>
+                            <li class="list-inline-item">
+
+                                <a routerLink="/updatepro/{{storage.productId}}">
+                                    <i class="fas fa-edit"></i> Edit
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <button (click)="delete(storage.productId)" class="btn btn-danger">
+                             <i class="fas fa-trash"></i>Delete
+                            </button>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

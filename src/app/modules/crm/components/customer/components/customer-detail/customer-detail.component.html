@@ -1,1 +1,13 @@
-<p>customer-detail works!</p>
+<div class="card mx-auto mt-3" style="width: 18rem;" *ngIf="customer">
+    <div class="card-header">
+        Customer
+    </div>
+    <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted"><span> <strong>Id: </strong></span>{{customer.customerId}}</h6>
+        <div><span><strong>Name:</strong> </span>{{customer.name}}</div>
+        <p class="card-text"><span><strong>Lastame:</strong> </span>{{customer.lastName}}</p>
+        <div><span><strong>Position Job:</strong> </span>{{customer.PersonId}}</div>
+
+        <button type="button" class="btn btn-info" (click)="goBack()">go back</button>
+    </div>
+</div>

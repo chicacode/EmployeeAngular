@@ -1,7 +1,7 @@
 <section class="sample-app-content">
     <nav class="navbar  navbar-expand-sm navbar-dark bg-dark">
         <a routerLink="/dashboard" class="nav-link text-white">Dashboard</a>
-        <a routerLink="/addcustomer" class="nav-link text-white">Add customers</a>
+        <a routerLink="/addcustomer" class="nav-link text-white">Update customer</a>
     </nav>
     <h2 class="h2 text-center mt-2">Customers</h2>
     <div class="card-body">
@@ -16,7 +16,7 @@
             <tbody>
                 <tr *ngFor="let customer of customers" class="customers">
                     <td><span class="badge">{{customer.customerId}}</span></td>
-                    <a routerLink="/detail/{{customer.customerId}}">
+                    <a routerLink="/detailcus/{{customer.customerId}}">
                         <td>{{customer.name}}</td>
                     </a>
 
@@ -25,7 +25,7 @@
                         <ul>
                             <li class="list-inline-item">
 
-                                <a routerLink="/update/{{customer.customerId}}">
+                                <a routerLink="/updatecus/{{customer.customerId}}">
                                     <i class="fas fa-edit"></i> Edit
                                 </a>
                             </li>

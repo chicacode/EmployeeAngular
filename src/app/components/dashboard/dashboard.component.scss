@@ -87,7 +87,7 @@ a:hover {
     padding-top: 20px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     .module {
         font-size: 10px;
         max-height: 75px;
@@ -95,21 +95,21 @@ a:hover {
     .h3-employees {
         font-size: 15px;
         position: relative;
-        right: 200px;
+        right: 0px;
         margin: 10px;
         font-weight: bold;
     }
 }
 
-@media (max-width: 1024px) {
-    .grid {
-        margin: 0;
-    }
+@media (max-width: 600px) {
     .module {
-        min-width: 60px;
+        font-size: 10px;
+        max-height: 75px;
     }
     .h3-employees {
-        margin-top: 50px;
-        padding-top: 20px;
+        font-size: 15px;
+        font-weight: bold;
+        position: relative;
+        right: 150px;
     }
 }

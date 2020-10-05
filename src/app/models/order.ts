@@ -2,10 +2,15 @@ import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/t
 
 export interface Order {
     OrderId: number;
-    CustomerId: number;
+    OrderNumber: string;
+    OrderState: OrderState;
+    OrderPriority: OrderPriority;
+    CreationOrder: Date;
+    DoneByEmployeeOrder: Date;
+    OrderCompleted: Date;
+    PriceItem: number;
+    PriceItemIva: number;
+    TotalPrice: number;
     ProductId: number;
     ProductQuantity: number;
-    EmployeeId: number;
-    OrderState: OrderState;
-    CreationOrder: Date;
 }

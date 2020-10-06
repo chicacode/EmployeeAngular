@@ -16,6 +16,8 @@ import { EmployeeModule } from './modules/employee/employee.module';
 import { InventoryModule } from './modules/inventory/inventory.module';
 import { OrdersModule } from './modules/sales/components/orders.module';
 import { CrmModule } from './modules/crm/crm.module';
+import { LoginComponent } from './login/login/login.component';
+import { RegisterComponent } from './register/register/register.component';
 
 
 
@@ -24,7 +26,9 @@ import { CrmModule } from './modules/crm/crm.module';
     AppComponent,
     DashboardComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

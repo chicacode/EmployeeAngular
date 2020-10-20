@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Location } from '@angular/common';
 
-import { Category } from '../../../../../models/category';
+import { Category } from '@app/models/category';
 import { CategoryService } from '../services/category.service';
 
 @Component({

@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { Location } from '@angular/common';
 
-import { Employee } from '../../../../models/employee';
+import { Employee } from '@app/models/employee';
 import { EmployeeService } from '../../services/employee.service';
 
 
@@ -16,7 +16,7 @@ import { EmployeeService } from '../../services/employee.service';
 export class EmployeeUpdateComponent implements OnInit {
 
   employeeForm: FormGroup;
-  employeeId; any;
+  employeeId: any;
   employee: Employee;
 
   constructor(

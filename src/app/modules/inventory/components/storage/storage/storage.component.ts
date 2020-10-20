@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Storage } from '../../../../../models/storage';
+import { Storage } from '@app/models/storage';
 import { StorageService } from '../services/storage.service';
 
 @Component({

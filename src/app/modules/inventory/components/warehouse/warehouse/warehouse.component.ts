@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Warehouse } from '../../../../../models/warehouse';
+import { Warehouse } from '@app/models/warehouse';
 import { WarehouseService } from '../services/warehouse.service';
 
 @Component({

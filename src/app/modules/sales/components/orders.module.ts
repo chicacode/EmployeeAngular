@@ -11,7 +11,6 @@ import { OrderUpdateComponent } from './order/order-update/order-update.componen
 
 @NgModule({
   declarations: [
-
     OrderAddComponent,
     OrderDetailComponent,
     OrderListComponent,
@@ -22,7 +21,10 @@ import { OrderUpdateComponent } from './order/order-update/order-update.componen
     OrderRoutingModule
   ],
   exports: [
-
+    OrderAddComponent,
+    OrderDetailComponent,
+    OrderListComponent,
+    OrderUpdateComponent
   ]
 })
 export class OrdersModule { }

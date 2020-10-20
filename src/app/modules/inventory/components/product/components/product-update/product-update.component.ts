@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { Location } from '@angular/common';
 
-import { Product } from '../../../../../../models/product';
+import { Product } from '@app/models/product';
 import { ProductService } from '../../services/product.service';
 
 @Component({

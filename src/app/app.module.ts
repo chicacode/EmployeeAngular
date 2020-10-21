@@ -14,12 +14,14 @@ import { LoginComponent } from './login/login/login.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { RegisterComponent } from './register/register/register.component';
+import { SidebarComponent } from './components/shared/sidebar/sidebar/sidebar.component';
 
 // Modules
 import { EmployeeModule } from './modules/employee/employee.module';
 import { InventoryModule } from './modules/inventory/inventory.module';
 import { OrdersModule } from './modules/sales/components/orders.module';
 import { CrmModule } from './modules/crm/crm.module';
+
 
 
 
@@ -31,7 +33,8 @@ import { CrmModule } from './modules/crm/crm.module';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

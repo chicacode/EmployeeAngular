@@ -1,17 +1,6 @@
 <!-- Crear array de botones o cards con mis servicios de gestion -->
-<div class="card mt-4">
-    <h4 class="card-header">Home</h4>
-    <div class="card-body">
-        <p>You're logged in with Angular 9 & JWT!!</p>
-        <p>Your role is: <strong>{{user.role}}</strong>.</p>
-        <p>This page can be accessed by <u>all authenticated users</u>.</p>
-        <p class="mb-1">Current user from secure api end point:</p>
-        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
-        <ul *ngIf="userFromApi">
-            <li>{{userFromApi.firstName}} {{userFromApi.lastName}}</li>
-        </ul>
-    </div>
-</div>
+
+<app-sidebar></app-sidebar>
 <div class="grid grid-pad">
     <a class="col-1-4">
         <div class="module">

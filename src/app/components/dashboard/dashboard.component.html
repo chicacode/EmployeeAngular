@@ -1,4 +1,17 @@
 <!-- Crear array de botones o cards con mis servicios de gestion -->
+<!-- <div class="card mt-4">
+    <h4 class="card-header">Home</h4>
+    <div class="card-body">
+        <p>You're logged in with Angular 9 & JWT!!</p>
+        <p>Your role is: <strong>{{user.role}}</strong>.</p>
+        <p>This page can be accessed by <u>all authenticated users</u>.</p>
+        <p class="mb-1">Current user from secure api end point:</p>
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <ul *ngIf="userFromApi">
+            <li>{{userFromApi.firstName}} {{userFromApi.lastName}}</li>
+        </ul>
+    </div>
+</div> -->
 <div class="grid grid-pad">
     <a class="col-1-4">
         <div class="module">
@@ -28,19 +41,17 @@
             </h4>
         </div>
     </a>
-</div>
+    <h3 class="h3-employees">Top Employees</h3>
+    <div class="grid grid-pad">
 
+        <div class="employees">
 
-<h3 class="h3-employees">Top Employees</h3>
-<div class="grid grid-pad">
+            <a *ngFor="let employee of employees" class="col-1-4" routerLink="/detail/{{employee.employeeId}}">
+                <div class="module">
+                    <h4 class="h4">{{employee.userName}}</h4>
+                </div>
+            </a>
+        </div>
 
-    <div class="employees">
-
-        <a *ngFor="let employee of employees" class="col-1-4" routerLink="/detail/{{employee.employeeId}}">
-            <div class="module">
-                <h4 class="h4">{{employee.userName}}</h4>
-            </div>
-        </a>
     </div>
-
 </div>

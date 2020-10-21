@@ -2,11 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-
+import { AdminComponent } from './admin/admin/admin.component';
+import { LoginComponent } from './login/login/login.component';
+import { AuthGuard } from './_helpers/auth.guard';
+import { Role } from './models/enums/role';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent,  canActivate: [AuthGuard] },
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data: { roles: [Role.Admin] } },
+  { path: 'login', component: LoginComponent },
   {
     path: 'employee',
     loadChildren: () => import('./modules/employee/employee.module').then(m => m.EmployeeModule)

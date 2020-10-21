@@ -1,48 +1,67 @@
 <!-- Crear array de botones o cards con mis servicios de gestion -->
-
 <app-sidebar></app-sidebar>
 <div class="grid grid-pad">
 
-    <a class="col-1-4">
-        <div class="module">
-            <h4 class="h4">
-                <a routerLink="/products">Inventory</a>
-            </h4>
-        </div>
-    </a>
-    <a class="col-1-4">
-        <div class="module ">
-            <h4 class="h4">
-                <a routerLink="/orders">Sales</a>
-            </h4>
-        </div>
-    </a>
-    <a class="col-1-4">
-        <div class="module ">
-            <h4 class="h4">
-                <a routerLink="/employees">Human Resources</a>
-            </h4>
-        </div>
-    </a>
-    <a class="col-1-4">
-        <div class="module ">
-            <h4 class="h4">
-                <a routerLink="/customers">CRM</a>
-            </h4>
+    <a class="col-1-9" routerLink="/products">
+        <div class="card text-white bg-dark mb-3">
+            <div class="card-header">
+                <h5 class="card-title"> <a class=" text-white">Inventory</a></h5>
+            </div>
+            <div class="card-body">
+                <img src="assets/img/foto5.jpg " class="product-img ">
+                <p class="card-text ">Products</p>
+            </div>
         </div>
     </a>
 
-    <h3 class="h3-employees">Top Employees</h3>
-    <div class="grid grid-pad">
-
-        <div class="employees">
-
-            <a *ngFor="let employee of employees" class="col-1-4" routerLink="/detail/{{employee.employeeId}}">
-                <div class="module">
-                    <h4 class="h4">{{employee.userName}}</h4>
-                </div>
-            </a>
+    <a class="col-1-9" routerLink="/orders">
+        <div class="card text-white bg-dark mb-3">
+            <div class="card-header">
+                <h5 class="card-title"> <a class=" text-white">Sales</a></h5>
+            </div>
+            <div class="card-body">
+                <img src="assets/img/foto11.jpg " class="product-img ">
+                <p class="card-text ">Orders by Products</p>
+            </div>
         </div>
+    </a>
 
+    <a class="col-1-9" routerLink="/employees">
+        <div class="card text-white bg-dark mb-3">
+            <div class="card-header">
+                <h5 class="card-title"> <a class=" text-white">Human Resources</a></h5>
+            </div>
+            <div class="card-body">
+                <img src="assets/img/foto12.jpg " class="product-img ">
+                <p class="card-text ">Employees</p>
+            </div>
+        </div>
+    </a>
+
+    <a class="col-1-9" routerLink="/customers">
+        <div class="card text-white bg-dark mb-3">
+            <div class="card-header">
+                <h5 class="card-title"> <a class=" text-white">CRM</a></h5>
+            </div>
+            <div class="card-body">
+                <img src="assets/img/foto13.jpg " class="product-img ">
+                <p class="card-text ">Customers</p>
+            </div>
+        </div>
+    </a>
+
+
+</div>
+<h3 class="h3-employees ">Top Employees</h3>
+<div class="grid grid-pad ">
+
+    <div class="employees ">
+
+        <a *ngFor="let employee of employees " class="col-1-4 " routerLink="/detail/{{employee.employeeId}} ">
+            <div class="module ">
+                <h4 class="h4 ">{{employee.userName}}</h4>
+            </div>
+        </a>
     </div>
+
 </div>

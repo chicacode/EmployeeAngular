@@ -29,6 +29,9 @@ a {
 
 .grid {
     margin: 0;
+    position: relative;
+    bottom: 250px;
+    left: 180px;
 }
 
 .col-1-4 {
@@ -52,6 +55,12 @@ a {
     background-color: #eee;
     cursor: pointer;
     color: #607d8b;
+}
+
+.product-img {
+    width: 200px;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .h4 a:hover {
@@ -82,11 +91,10 @@ a:hover {
     padding-right: 20px;
 }
 
-.h3-employees {
-    margin-top: 50px;
-    padding-top: 20px;
-}
-
+// .h3-employees {
+//     margin-top: 50px;
+//     padding-top: 20px;
+// }
 @media (max-width: 900px) {
     .module {
         font-size: 10px;

@@ -28,7 +28,7 @@ export class DashboardComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   ngOnInit() {
-    // this.getUser();
+    this.getUser();
     this.getEmployees();
   }
 

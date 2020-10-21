@@ -1,6 +1,6 @@
 <header class="header">
     <!-- *ngIf="user" -->
-    <nav class="navbar">
+    <nav class="navbar" *ngIf="user">
         <ul class="list-section">
             <img class="header__image" src="/assets/img/chicacode-logo.png" alt="chicacode logo">
             <div class="header__menu">
@@ -11,15 +11,15 @@
                     <p class="header__menu--profile-user">Profile</p>
                 </div>
                 <li class="list">
-                    <a class="nav-item nav-link" routerLink="/">Home</a>
+                    <a class="nav-item nav-link" routerLink="/">Dashboard</a>
                 </li>
                 <li class="list">
                     <!-- *ngIf="isAdmin" -->
                     <a class="nav-item nav-link" routerLink="/admin">Admin</a>
                 </li>
-                <li class="list">
+                <!-- <li class="list">
                     <a href="/">Account</a>
-                </li>
+                </li> -->
                 <li class="list">
                     <a class="nav-item nav-link" (click)="logout()">Logout</a>
                 </li>

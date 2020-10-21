@@ -8,7 +8,7 @@ import { AuthenticationService } from '@app/_services/authentication.service';
 export class JwtInterceptor implements HttpInterceptor {
     private url: string;
     constructor(private authenticationService: AuthenticationService, private http: HttpClient) {
-        this.url = 'https://localhost:44342/api/users/authenticate';
+        this.url = 'https://localhost:44342/api';
     }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {

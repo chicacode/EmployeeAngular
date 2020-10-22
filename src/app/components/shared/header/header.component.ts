@@ -12,7 +12,7 @@ import { Role } from '../../../models/enums/role';
 })
 export class HeaderComponent{
   user: User;
-
+  title = 'Enterprise Resources Planning';
   constructor(private authenticationService: AuthenticationService) {
     this.authenticationService.user.subscribe(x => this.user = x);
    }

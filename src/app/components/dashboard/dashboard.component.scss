@@ -18,22 +18,21 @@
     box-sizing: border-box;
 }
 
-h3 {
-    text-align: center;
-    margin-bottom: 0;
-}
-
+// h3 {
+//     text-align: center;
+//     margin-bottom: 0;
+// }
 a {
     color: #00000e;
 }
 
 .grid {
-    position: relative;
-    bottom: 250px;
-    left: 180px;
+    position: absolute;
+    top: 350px;
+    left: 220px;
 }
 
-.col-1-4 {
+.col-1-8 {
     width: 25%;
 }
 
@@ -57,8 +56,8 @@ a {
 }
 
 .product-img {
-    width: 200px;
-    border-radius: 20px;
+    width: 180px;
+    border-radius: 10px;
     overflow: hidden;
 }
 
@@ -90,10 +89,17 @@ a:hover {
     padding-right: 20px;
 }
 
-// .h3-employees {
-//     margin-top: 50px;
-//     padding-top: 20px;
-// }
+@media (min-width: 1266px) {
+    .grid {
+        position: absolute;
+        top: 350px;
+        left: 350px;
+    }
+    .col-1-8 {
+        width: 25%;
+    }
+}
+
 @media (max-width: 900px) {
     .module {
         font-size: 10px;

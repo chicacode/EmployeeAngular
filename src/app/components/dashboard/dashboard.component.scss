@@ -36,6 +36,15 @@ a {
     width: 25%;
 }
 
+.carrousel-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+}
+
 .module {
     padding: 20px;
     text-align: center;
@@ -62,17 +71,16 @@ a {
 }
 
 .h4 a:hover {
-    padding: 2px;
     font-size: 14px;
     font-weight: bold;
 }
 
 h4,
 .h4 {
-    padding: 2px;
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
+    color: black;
 }
 
 a:hover {

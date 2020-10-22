@@ -50,6 +50,18 @@
         </div>
     </a>
 </div>
+
+
+<div class="carrousel-container">
+    <a class="col-1-4 " *ngFor="let employee of employees" routerLink="/detail/{{employee.employeeId}} ">
+        <h4 class="h4"></h4>
+        <app-carrousel [employees]="employee.userName"></app-carrousel>
+
+    </a>
+</div>
+
+
+
 <!-- <h3 class="h3-employees ">Top Employees</h3>
 <div class="grid grid-pad ">
 

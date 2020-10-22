@@ -21,6 +21,7 @@ import { EmployeeModule } from './modules/employee/employee.module';
 import { InventoryModule } from './modules/inventory/inventory.module';
 import { OrdersModule } from './modules/sales/components/orders.module';
 import { CrmModule } from './modules/crm/crm.module';
+import { CarrouselComponent } from './components/shared/carrousel/carrousel/carrousel.component';
 
 
 
@@ -34,7 +35,8 @@ import { CrmModule } from './modules/crm/crm.module';
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    SidebarComponent
+    SidebarComponent,
+    CarrouselComponent
   ],
   imports: [
     BrowserModule,

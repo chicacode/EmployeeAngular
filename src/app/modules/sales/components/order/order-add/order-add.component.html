@@ -1,7 +1,7 @@
 <section class="sample-app-content">
     <nav class="navbar  navbar-expand-sm navbar-dark bg-dark">
         <a routerLink="/dashboard" class="nav-link text-white">Dashboard</a>
-        <a routerLink="/employees" class="nav-link text-white">Employees</a>
+        <a routerLink="/orders" class="nav-link text-white">Orders</a>
     </nav>
     <h1 class="text-center">Add Order</h1>
     <form [formGroup]="orderForm" novalidate class="form">
@@ -11,9 +11,9 @@
             <div class="alert alert-danger" *ngIf="orderForm.get('orderNumber').hasError('required') && orderForm.get('orderNumber').touched">order Number is required</div>
         </div>
         <div class="form-group">
-            <label for="order Priority">Order Priority:</label>
-            <input type="number" maxlength="3" formControlName="Order Priority" placeholder="order Priority" name="orderPriority" class="form-control" id="orderPriority">
-            <div class="alert alert-danger" *ngIf="orderForm.get('orderPriority').hasError('required') && orderForm.get('LastName').touched">Priority is required</div>
+            <label for="orderPriority">Order Priority:</label>
+            <input type="number" maxlength="3" formControlName="orderPriority" placeholder="order Priority" name="orderPriority" class="form-control" id="orderPriority">
+            <div class="alert alert-danger" *ngIf="orderForm.get('orderPriority').hasError('required') && orderForm.get('orderPriority').touched">Priority is required</div>
         </div>
 
         <div class="form-group">
@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
             <label for="creationOrder">Creation Order Date</label>
-            <input type="date" formControlName="Salary" placeholder="Creation Date" name="creationOrder" class="form-control" id="creationOrder">
+            <input type="date" formControlName="creationOrder" placeholder="Creation Date" name="creationOrder" class="form-control" id="creationOrder">
             <div class="alert alert-danger" *ngIf="orderForm.get('creationOrder').hasError('required') && orderForm.get('creationOrder').touched">date is required</div>
         </div>
         <div class="form-group">
@@ -39,17 +39,17 @@
         <div class="form-group">
             <label for="addressId">Address Id</label>
             <input type="number" formControlName="addressId" placeholder="Address Id" name="addressId" class="form-control" id="addressId">
-            <div class="alert alert-danger" *ngIf="orderForm.get('addressId').hasError('required') && orderForm.get('addressId').touched">Address Id is required</div>
+            <!-- <div class="alert alert-danger" *ngIf="orderForm.get('addressId').hasError('required') && orderForm.get('addressId').touched">Address Id is required</div> -->
         </div>
         <div class="form-group">
             <label for="customerId">Customer Id</label>
             <input type="number" formControlName="customerId" placeholder="customer Id" name="customerId" class="form-control" id="customerId">
-            <div class="alert alert-danger" *ngIf="orderForm.get('customerId').hasError('required') && orderForm.get('customerId').touched">customer Id is required</div>
+            <!-- <div class="alert alert-danger" *ngIf="orderForm.get('customerId').hasError('required') && orderForm.get('customerId').touched">customer Id is required</div> -->
         </div>
         <div class="form-group">
-            <label for="orderCompleted">Date Order Completed</label>
-            <input type="date" formControlName="orderCompleted" placeholder="Date Order Completed" name="Password" class="form-control" id="orderCompleted">
-            <div class="alert alert-danger" *ngIf="orderForm.get('orderCompleted').hasError('required') && orderForm.get('orderCompleted').touched">Date order completed is required</div>
+            <label for="employeeId">Employee Id</label>
+            <input type="number" formControlName="employeeId" placeholder="Employee Id Completed" name="employeeId" class="form-control" id="employeeId">
+            <!-- <div class="alert alert-danger" *ngIf="orderForm.get('employeeId').hasError('required') && orderForm.get('employeeId').touched">Employee Id completed is required</div> -->
         </div>
         <button class="btn btn-success" [disabled]="!orderForm.valid" (click)="create()">Save</button>
     </form>

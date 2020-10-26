@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Location } from '@angular/common';
 
-import { Product } from '@app/models/product';
+import { Product } from '../../../../../../models/product';
 import { ProductService } from '../../services/product.service';
 
 @Component({
@@ -33,10 +33,13 @@ export class ProductUpdateComponent implements OnInit {
       Price:  ['', Validators.required],
       CategoryName: ['', Validators.required],
     });
+
+    this.getProduct();
   }
 
   upData(product: Product): any{
     this.productForm.patchValue({
+      Id: product.id,
       Name: product.name,
       Description: product.description,
       TotalQuantity: product.totalQuantity,
@@ -45,13 +48,14 @@ export class ProductUpdateComponent implements OnInit {
     });
   }
 
-  getEmployee(): void {
+  getProduct(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.productId = id;
     this.productService.getProduct(this.productId.toString())
-      .subscribe(employee => {
-        this.product = employee;
-        this.upData(employee);
+      .subscribe(product => {
+        this.product = product;
+        this.upData(product);
+        console.log(this.product);
       });
   }
 
@@ -65,7 +69,6 @@ export class ProductUpdateComponent implements OnInit {
     this.productId = id;
     // tslint:disable-next-line: radix
     this.productId = parseInt( this.productId );
-    console.log( typeof this.productId);
 
     product.id = this.productId;
     this.productService.updateProduct(product)

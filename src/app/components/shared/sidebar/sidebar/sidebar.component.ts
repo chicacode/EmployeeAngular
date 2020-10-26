@@ -37,6 +37,7 @@ export class SidebarComponent implements OnInit {
     this.userService.getById(this.user.id).pipe(first()).subscribe(user => {
         this.loading = false;
         this.userFromApi = user;
+        console.log(this.userFromApi);
     });
   }
 

@@ -1,1 +1,18 @@
-<p>order-detail works!</p>
+<div class="card mx-auto mt-3" style="width: 18rem;" *ngIf="order">
+    <div class="card-header">
+        Order
+    </div>
+    <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted"><span> <strong>Id: </strong></span>{{order.id}}</h6>
+        <div><span><strong>order Number: </strong> </span>{{order.orderNumber}}</div>
+        <p class="card-text"><span><strong>order Priority: </strong> </span>{{order.orderPriority}}</p>
+        <div><span><strong>order State: </strong> </span>{{order.orderState}}</div>
+        <div><span><strong>creation Order: </strong> </span>{{order.creationOrder}}</div>
+        <div><span><strong>done by employee: </strong> </span>{{order.doneByEmployeeOrder}}</div>
+        <div><span><strong>order completed: </strong> </span>{{order.orderCompleted}}</div>
+        <div><span><strong>address Id: </strong> </span>{{order.addressId}}</div>
+        <div><span><strong>customer Id: </strong> </span>{{order.customerId}}</div>
+        <div class="mb-3"><span><strong>employee Id: </strong> </span>{{order.employeeId}}</div>
+        <button type="button" class="btn btn-info" (click)="goBack()">go back</button>
+    </div>
+</div>

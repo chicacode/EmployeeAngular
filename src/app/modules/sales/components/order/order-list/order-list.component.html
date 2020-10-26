@@ -17,7 +17,7 @@
                     <th>orderCompleted</th>
                     <th>addressId</th>
                     <th>customerId</th>
-                    <th>employeeId</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -26,11 +26,13 @@
                     <a routerLink="/detail/{{order.id}}">
                         <td>{{order.orderNumber}}</td>
                     </a>
-
                     <td style="color:black;"> {{order.orderPriority}}</td>
                     <td>{{order.orderState}}</td>
                     <td>{{order.creationOrder}} </td>
                     <td>{{order.doneByEmployeeOrder}} </td>
+                    <td>{{order.orderCompleted}}</td>
+                    <td>{{order.addressId}} </td>
+                    <td>{{order.customerId}} </td>
                     <td>
                         <ul>
                             <li class="list-inline-item">

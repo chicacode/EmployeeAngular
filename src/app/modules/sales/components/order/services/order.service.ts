@@ -28,6 +28,28 @@ export class OrderService {
     );
   }
 
+  getOrder(id: number): Observable<Order>{
+    const url = `${this.url}/${id}`;
+    return this.http.get<Order>(url)
+      .pipe(
+        catchError(this.handleError<Order>(`getOrder id=${id}`))
+    );
+  }
+
+  addOrder(order: Order): Observable<Order> {
+    return this.http.post<Order>(this.url, order, this.httpOptions)
+    .pipe(
+      catchError(this.handleError<any>('addOrder'))
+    );
+  }
+
+  updateOrder(order: Order): Observable<Order>{
+    const url = `${this.url}/${order.id}`;
+    return this.http.put<Order>(url, order, this.httpOptions).pipe(
+          catchError(this.handleError<any>('updateOrder'))
+      );
+  }
+
   deleteOrder(id: number): Observable<Order>{
     const url = `${this.url}/${id}`;
     return this.http.delete<Order>(url);

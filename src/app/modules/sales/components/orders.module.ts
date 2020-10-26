@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OrderRoutingModule } from './orders-routing.module';
 
 
@@ -18,6 +19,8 @@ import { OrderUpdateComponent } from './order/order-update/order-update.componen
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     OrderRoutingModule
   ],
   exports: [

@@ -67,7 +67,7 @@ export class ProductUpdateComponent implements OnInit {
     this.productId = parseInt( this.productId );
     console.log( typeof this.productId);
 
-    product.productId = this.productId;
+    product.id = this.productId;
     this.productService.updateProduct(product)
     .subscribe (() => this.goBack());
   }

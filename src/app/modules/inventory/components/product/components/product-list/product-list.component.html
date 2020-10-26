@@ -2,51 +2,45 @@
     <nav class="navbar  navbar-expand-sm navbar-dark bg-dark">
         <a routerLink="/dashboard" class="nav-link text-white">Dashboard</a>
         <a routerLink="/addproduct" class="nav-link text-white">Add Product</a>
-        <a routerLink="/categories" class="nav-link text-white">Categories</a>
+        <a routerLink="/categories" class="nav-link text-white">Storages</a>
     </nav>
     <h2 class="h2 text-center mt-2">Product List</h2>
     <div class="card-body">
         <table class="table table-bordered table-center">
-
             <thead>
                 <tr>
                     <th>Product Id</th>
                     <th>Name</th>
                     <th>Description</th>
                     <th>Total Quantity</th>
-                    <th>Category Id</th>
+                    <th>Price</th>
                     <th>Category</th>
-                    <th>Storages</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let product of products" class="products">
-                    <td><span class="badge">{{product.productId}}</span></td>
-                    <a routerLink="/detailpro/{{product.productId}}">
+                    <td><span class="badge">{{product.id}}</span></td>
+                    <a routerLink="/detailpro/{{product.id}}">
                         <td>{{product.name}}</td>
                     </a>
 
                     <td style="color:black;"> {{product.description}}</td>
                     <td>{{product.totalQuantity}} </td>
-                    <a routerLink="/categories/{{product.categoryId}}">
-                        <td>{{product.categoryId}} </td>
-                    </a>
-
-
-                    <td>{{product.category}}</td>
-                    <a routerLink="/storage/{{product.storageList}}">
-                        <td>{{product.storageList}} </td>
-                    </a>
+                    <td>{{product.price}} </td>
+                    <td>{{product.categoryName}}</td>
+                    <!-- <a routerLink="/storage/{{id}}">
+                        <td>{{product.StorageId}} </td>
+                    </a> -->
                     <td>
                         <ul>
                             <li class="list-inline-item">
 
-                                <a routerLink="/updatepro/{{product.productId}}">
+                                <a routerLink="/updatepro/{{product.id}}">
                                     <i class="fas fa-edit"></i> Edit
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <button (click)="delete(product.productId)" class="btn-delete">
+                                <button (click)="delete(product.id)" class="btn-delete">
                              <i class="fas fa-trash"></i>Delete
                             </button>
                             </li>

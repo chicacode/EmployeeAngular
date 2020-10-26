@@ -12,19 +12,23 @@
         </div>
         <div class="form-group">
             <label for="Description">Product Description:</label>
-            <input type="text" formControlName="Description" placeholder="Description" name="Description" class="form-control" id="LastName">
-            <div class="alert alert-danger" *ngIf="productForm.get('Description').hasError('required') && productForm.get('LastName').touched">Description is required</div>
+            <textarea class="form-control" formControlName="Description" id="Description" rows="3"></textarea>
+            <div class="alert alert-danger" *ngIf="productForm.get('Description').hasError('required') && productForm.get('Description').touched">Description is required</div>
         </div>
-
         <div class="form-group">
             <label for="TotalQuantity">Total Quantity</label>
             <input type="text" formControlName="TotalQuantity" placeholder="Total Quantity" name="TotalQuantity" class="form-control" id="TotalQuantity">
             <div class="alert alert-danger" *ngIf="productForm.get('TotalQuantity').hasError('required') && productForm.get('TotalQuantity').touched">Quantity is required</div>
         </div>
         <div class="form-group">
-            <label for="CategoryId">Category Id</label>
-            <input type="number" formControlName="CategoryId" placeholder="CategoryId" name="CategoryId" class="form-control" id="CategoryId">
-            <div class="alert alert-danger" *ngIf="productForm.get('CategoryId').hasError('required') && productForm.get('CategoryId').touched">category id is required</div>
+            <label for="price">Price</label>
+            <input type="number" formControlName="price" placeholder="price" name="price" class="form-control" id="price">
+            <div class="alert alert-danger" *ngIf="productForm.get('price').hasError('required') && productForm.get('price').touched">Price is required</div>
+        </div>
+        <div class="form-group">
+            <label for="categoryName">Category </label>
+            <input type="number" formControlName="categoryName" placeholder="categoryName" name="categoryName" class="form-control" id="categoryName">
+            <div class="alert alert-danger" *ngIf="productForm.get('categoryName').hasError('required') && productForm.get('categoryName').touched">Category is required</div>
         </div>
 
         <button class="btn btn-success" [disabled]="!productForm.valid" (click)="update()">Edit</button>

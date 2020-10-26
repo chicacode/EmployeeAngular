@@ -1,4 +1,9 @@
 export interface Address {
     AddressId: number;
-    name: string;
+    AddressNumber: number;
+    AddressStreet: string;
+    AddressContactName: string;
+    AddressZipCode: string;
+    AddressCity: string;
+    AddressCountry: string;
 }

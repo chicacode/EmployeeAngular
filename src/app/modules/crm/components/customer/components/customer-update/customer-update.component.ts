@@ -27,7 +27,6 @@ export class CustomerUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.customerForm = this.formBuilder.group({
-      PersonId: ['', Validators.required],
       Name: ['', Validators.required],
       LastName: ['', Validators.required]
     });
@@ -37,7 +36,6 @@ export class CustomerUpdateComponent implements OnInit {
 
   upData(customer: Customer): any{
     this.customerForm.patchValue({
-      PersonId: customer.PersonId,
       Name: customer.name,
       LastName: customer.lastName
   });

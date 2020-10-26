@@ -6,4 +6,5 @@ export interface Employee {
     salary: number;
     userName: string;
     password: string;
+    IsAdmin: boolean;
 }

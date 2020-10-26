@@ -8,29 +8,32 @@
         <table class="table table-bordered table-center">
             <thead>
                 <tr>
-                    <th>Customer Id</th>
                     <th>Name</th>
                     <th>Lastname</th>
+                    <th>Phone</th>
+                    <th>Email</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let customer of customers" class="customers">
-                    <td><span class="badge">{{customer.customerId}}</span></td>
-                    <a routerLink="/detailcus/{{customer.customerId}}">
+                <tr *ngFor="let customer of customers">
+
+                    <a routerLink="/detailcus/{{customer.id}}">
                         <td>{{customer.name}}</td>
                     </a>
 
                     <td style="color:black;"> {{customer.lastName}}</td>
+                    <td style="color:black;"> {{customer.phoneNumber}}</td>
+                    <td style="color:black;"> {{customer.email}}</td>
                     <td>
                         <ul>
                             <li class="list-inline-item">
 
-                                <a routerLink="/updatecus/{{customer.customerId}}">
+                                <a routerLink="/updatecus/{{customer.id}}">
                                     <i class="fas fa-edit"></i> Edit
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <button (click)="delete(customer.customerId)" class="btn-delete">
+                                <button (click)="delete(customer.id)" class="btn-delete">
                              <i class="fas fa-trash"></i>Delete
                             </button>
                             </li>

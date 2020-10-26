@@ -1,16 +1,13 @@
-import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 
 export interface Order {
     OrderId: number;
     OrderNumber: string;
-    OrderState: OrderState;
     OrderPriority: OrderPriority;
+    OrderState: OrderState;
     CreationOrder: Date;
     DoneByEmployeeOrder: Date;
     OrderCompleted: Date;
-    PriceItem: number;
-    PriceItemIva: number;
-    TotalPrice: number;
-    ProductId: number;
-    ProductQuantity: number;
+    AddressId?: number;
+    CustomerId?: number;
+    EmployeeId?: number;
 }

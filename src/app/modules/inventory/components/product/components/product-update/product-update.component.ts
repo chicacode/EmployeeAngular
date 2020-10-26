@@ -30,16 +30,18 @@ export class ProductUpdateComponent implements OnInit {
       Name: ['', Validators.required],
       Description: ['', Validators.required],
       TotalQuantity: ['', Validators.required],
-      CategoryId: ['', Validators.required],
+      Price:  ['', Validators.required],
+      CategoryName: ['', Validators.required],
     });
   }
 
   upData(product: Product): any{
     this.productForm.patchValue({
       Name: product.name,
-      LastName: product.description,
-      PositionJob: product.totalQuantity,
-      Salary: product.category
+      Description: product.description,
+      TotalQuantity: product.totalQuantity,
+      Price: product.price,
+      CategoryName: product.categoryName
     });
   }
 

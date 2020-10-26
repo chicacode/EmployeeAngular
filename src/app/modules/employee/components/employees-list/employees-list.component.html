@@ -3,7 +3,7 @@
         <a routerLink="/dashboard" class="nav-link text-white">Dashboard</a>
         <a routerLink="/addemployee" class="nav-link text-white">Add Employees</a>
     </nav>
-    <h2 class="h2 text-center mt-2">ERP Employess</h2>
+    <h2 class="h2 text-center mt-2">Employees</h2>
     <div class="card-body">
         <table class="table table-bordered table-center">
             <thead>
@@ -17,8 +17,8 @@
             </thead>
             <tbody>
                 <tr *ngFor="let employee of employees" class="employees">
-                    <td><span class="badge">{{employee.employeeId}}</span></td>
-                    <a routerLink="/detail/{{employee.employeeId}}">
+                    <td><span class="badge">{{employee.id}}</span></td>
+                    <a routerLink="/detail/{{employee.id}}">
                         <td>{{employee.name}}</td>
                     </a>
 
@@ -29,12 +29,12 @@
                         <ul>
                             <li class="list-inline-item">
 
-                                <a class="edit" routerLink="/update/{{employee.employeeId}}">
+                                <a class="edit" routerLink="/update/{{employee.id}}">
                                     <i class="fas fa-edit"></i> Edit
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <button (click)="delete(employee.employeeId)" class="btn-delete">
+                                <button (click)="delete(employee.id)" class="btn-delete">
                              <i class="fas fa-trash"></i>Delete
                             </button>
                             </li>

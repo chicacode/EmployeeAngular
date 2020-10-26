@@ -1,10 +1,10 @@
 export interface Employee {
-    employeeId: number;
+    id: number;
     name: string;
     lastName: string;
     positionJob: string;
     salary: number;
     userName: string;
     password: string;
-    IsAdmin: boolean;
+    isAdmin: boolean;
 }

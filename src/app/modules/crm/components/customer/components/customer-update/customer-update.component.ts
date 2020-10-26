@@ -14,7 +14,7 @@ import { CustomerService } from '../../services/customer.service';
 export class CustomerUpdateComponent implements OnInit {
 
   customerForm: FormGroup;
-  customerId; any;
+  customerId: any;
   customer: Customer;
 
 
@@ -28,7 +28,9 @@ export class CustomerUpdateComponent implements OnInit {
   ngOnInit(): void {
     this.customerForm = this.formBuilder.group({
       Name: ['', Validators.required],
-      LastName: ['', Validators.required]
+      LastName: ['', Validators.required],
+      PhoneNumber: ['', Validators.required],
+      Email: ['', Validators.required]
     });
 
     this.getCustomer();
@@ -37,7 +39,9 @@ export class CustomerUpdateComponent implements OnInit {
   upData(customer: Customer): any{
     this.customerForm.patchValue({
       Name: customer.name,
-      LastName: customer.lastName
+      LastName: customer.lastName,
+      PhoneNumber: customer.phoneNumber,
+      Email: customer.email
   });
 }
   getCustomer(): void {
@@ -62,7 +66,7 @@ export class CustomerUpdateComponent implements OnInit {
     this.customerId = parseInt( this.customerId );
     console.log( typeof this.customerId);
 
-    customer.customerId = this.customerId;
+    customer.id = this.customerId;
     this.customerService.updateCustomer(customer)
       .subscribe (() => this.goBack());
   }

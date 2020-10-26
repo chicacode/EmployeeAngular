@@ -50,7 +50,7 @@ export class EmployeeService {
   }
 
   updateEmployee(employee: Employee): Observable<Employee>{
-    const url = `${this.url}/${employee.employeeId}`;
+    const url = `${this.url}/${employee.id}`;
     return this.http.put<Employee>(url, employee, this.httpOptions).pipe(
           catchError(this.handleError<any>('updateEmployee'))
       );

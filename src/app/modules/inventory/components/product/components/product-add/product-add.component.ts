@@ -31,7 +31,8 @@ export class ProductAddComponent implements OnInit {
       Name: ['', Validators.required],
       Description: ['', Validators.required],
       TotalQuantity: ['', Validators.required],
-      CategoryId: ['', Validators.required],
+      Price:  ['', Validators.required],
+      CategoryName: ['', Validators.required],
     });
   }
   goBack(): void {

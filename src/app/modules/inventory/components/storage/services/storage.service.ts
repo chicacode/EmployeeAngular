@@ -43,7 +43,7 @@ export class StorageService {
   }
 
   updateStorage(storage: Storage): Observable<Storage>{
-    const url = `${this.url}/${storage.StorageId}`;
+    const url = `${this.url}/${storage.id}`;
     return this.http.put<Storage>(url, storage, this.httpOptions).pipe(
           catchError(this.handleError<any>('updateStorage'))
       );

@@ -1,6 +1,8 @@
 <section class="sample-app-content">
     <nav class="navbar  navbar-expand-sm navbar-dark bg-dark">
         <a routerLink="/dashboard" class="nav-link text-white">Dashboard</a>
+        <a routerLink="/products" class="nav-link text-white">Products</a>
+        <a routerLink="/storage" class="nav-link text-white">Storages</a>
     </nav>
     <h2 class="h2 text-center mt-2">WareHouses</h2>
     <div class="card-body">
@@ -10,28 +12,29 @@
                     <th>Warehouse Id</th>
                     <th>Name</th>
                     <th>Warehouse Address</th>
+                    <th>Address Id</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let warehouse of warehouses" class="products">
-                    <td><span class="badge">{{warehouse.WarehouseId}}</span></td>
-                    <a routerLink="/detailpro/{{warehouse.WarehouseId}}">
-                        <td>{{warehouse.WarehouseId}}</td>
+                    <td><span class="badge">{{warehouse.id}}</span></td>
+                    <a routerLink="/detailpro/{{warehouse.id}}">
+                        <td>{{warehouse.id}}</td>
                     </a>
 
                     <td style="color:black;"> {{warehouse.name}}</td>
-                    <td>{{warehouse.address}} </td>
+                    <td>{{warehouse.addressId}} </td>
 
                     <td>
                         <ul>
-                            <li class="list-inline-item">
+                            <!-- <li class="list-inline-item">
 
-                                <a routerLink="/updatepro/{{warehouse.WarehouseId}}">
+                                <a routerLink="/updatepro/{{warehouse.id}}">
                                     <i class="fas fa-edit"></i> Edit
                                 </a>
-                            </li>
+                            </li> -->
                             <li class="list-inline-item">
-                                <button (click)="delete(warehouse.WarehouseId)" class="btn btn-danger">
+                                <button (click)="delete(warehouse.id)" class="btn-delete">
                              <i class="fas fa-trash"></i>Delete
                             </button>
                             </li>

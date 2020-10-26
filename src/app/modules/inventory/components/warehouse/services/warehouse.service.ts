@@ -42,7 +42,7 @@ export class WarehouseService {
   }
 
   updateWarehouse(warehouse: Warehouse): Observable<Warehouse>{
-    const url = `${this.url}/${warehouse.WarehouseId}`;
+    const url = `${this.url}/${warehouse.id}`;
     return this.http.put<Warehouse>(url, warehouse, this.httpOptions).pipe(
           catchError(this.handleError<any>('updateWarehouse'))
       );

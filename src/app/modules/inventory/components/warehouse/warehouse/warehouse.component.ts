@@ -15,6 +15,7 @@ export class WarehouseComponent implements OnInit {
   constructor(private warehouseService: WarehouseService) { }
 
   ngOnInit(): void {
+    this.getWarehouseList();
   }
   getWarehouseList(): void{
     this.warehouseService.getWarehouses().subscribe(

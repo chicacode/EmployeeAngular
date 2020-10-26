@@ -1,8 +1,8 @@
 
 export interface Storage {
-    StorageId: number;
+    id: number;
     lastUpdate: Date;
     partialQuantity: number;
     productId: number;
-    WarehouseId: number;
+    warehouseId: number;
 }

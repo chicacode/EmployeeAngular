@@ -3,7 +3,7 @@
         <a routerLink="/dashboard" class="nav-link text-white">Dashboard</a>
         <a routerLink="/products" class="nav-link text-white">Products</a>
     </nav>
-    <h1 class="text-center">Add Product</h1>
+    <h1 class="text-center mt-2">Add Product</h1>
     <form [formGroup]="productForm" novalidate class="form">
         <div class="form-group">
             <label for="Name">Product Name:</label>
@@ -15,21 +15,24 @@
             <textarea class="form-control" formControlName="Description" id="Description" rows="3"></textarea>
             <div class="alert alert-danger" *ngIf="productForm.get('Description').hasError('required') && productForm.get('Description').touched">Description is required</div>
         </div>
-
         <div class="form-group">
             <label for="TotalQuantity">Total Quantity</label>
-            <input type="text" formControlName="TotalQuantity" placeholder="Total Quantity" name="TotalQuantity" class="form-control" id="TotalQuantity">
+            <input type="number" formControlName="TotalQuantity" placeholder="Total Quantity" name="TotalQuantity" class="form-control" id="TotalQuantity">
             <div class="alert alert-danger" *ngIf="productForm.get('TotalQuantity').hasError('required') && productForm.get('TotalQuantity').touched">Quantity is required</div>
         </div>
         <div class="form-group">
-            <label for="CategoryId">Category Id</label>
-            <!-- <input type="number" formControlName="CategoryId" placeholder="CategoryId" name="CategoryId" class="form-control" id="CategoryId"> -->
-            <select class="form-control" formControlName="CategoryId">
-                <option *ngFor="let oneOption of categories" [ngValue]="oneOption" id="CategoryId">{{oneOption.name}}</option>
-            </select>
-
-            <div class="alert alert-danger" *ngIf="productForm.get('CategoryId').hasError('required') && productForm.get('CategoryId').touched">category id is required</div>
+            <label for="Price">Price</label>
+            <input type="number" formControlName="Price" placeholder="Price" name="Price" class="form-control" id="Price">
+            <div class="alert alert-danger" *ngIf="productForm.get('Price').hasError('required') && productForm.get('Price').touched">Price is required</div>
         </div>
+        <div class="form-group">
+            <label for="CategoryName">Category </label>
+            <input type="text" formControlName="CategoryName" placeholder="Category Name" name="CategoryName" class="form-control" id="CategoryName">
+            <div class="alert alert-danger" *ngIf="productForm.get('CategoryName').hasError('required') && productForm.get('CategoryName').touched">Category is required</div>
+        </div>
+
+
+
         <button class="btn btn-success" [disabled]="!productForm.valid" (click)="create()">Add Product</button>
     </form>
 </section>

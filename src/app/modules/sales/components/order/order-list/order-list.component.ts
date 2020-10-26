@@ -21,7 +21,7 @@ export class OrderListComponent implements OnInit {
 
   getOrders(): void{
     this.orderService.getOrders().subscribe(
-      response => { this.orders = response; console.log(response) },
+      response => { this.orders = response; console.log(response)},
       error => {console.log('There was a problem to get orders'); }
     );
   }

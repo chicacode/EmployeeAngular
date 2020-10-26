@@ -23,7 +23,7 @@
             <tbody>
                 <tr *ngFor="let order of orders" class="employees">
                     <td><span class="badge">{{order.id}}</span></td>
-                    <a routerLink="/detail/{{order.id}}">
+                    <a routerLink="/detailor/{{order.id}}">
                         <td>{{order.orderNumber}}</td>
                     </a>
                     <td style="color:black;"> {{order.orderPriority}}</td>
@@ -37,7 +37,7 @@
                         <ul>
                             <li class="list-inline-item">
 
-                                <a class="edit" routerLink="/update/{{order.id}}">
+                                <a class="edit" routerLink="/updateor/{{order.id}}">
                                     <i class="fas fa-edit"></i> Edit
                                 </a>
                             </li>

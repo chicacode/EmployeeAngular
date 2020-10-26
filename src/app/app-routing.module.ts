@@ -6,12 +6,14 @@ import { AdminComponent } from './admin/admin/admin.component';
 import { LoginComponent } from './login/login/login.component';
 import { AuthGuard } from './_helpers/auth.guard';
 import { Role } from './models/enums/role';
+import { OutputGraphComponent } from './components/output-graph/output-graph.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent,  canActivate: [AuthGuard] },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data: { roles: [Role.Admin] } },
   { path: 'login', component: LoginComponent },
+  { path: 'graph', component: OutputGraphComponent },
   {
     path: 'employee',
     loadChildren: () => import('./modules/employee/employee.module').then(m => m.EmployeeModule)

@@ -71,7 +71,7 @@ export class EmployeeUpdateComponent implements OnInit {
       this.employeeId = parseInt( this.employeeId );
       console.log( typeof this.employeeId);
 
-      employee.employeeId = this.employeeId;
+      employee.id = this.employeeId;
       this.employeeService.updateEmployee(employee)
       .subscribe (() => this.goBack());
     }

@@ -1,13 +1,15 @@
+import { OrderPriority } from '../models/enums/orderpriotity';
+import { OrderState } from '../models/enums/orderstate';
 
 export interface Order {
-    OrderId: number;
-    OrderNumber: string;
-    OrderPriority: OrderPriority;
-    OrderState: OrderState;
-    CreationOrder: Date;
-    DoneByEmployeeOrder: Date;
-    OrderCompleted: Date;
-    AddressId?: number;
-    CustomerId?: number;
-    EmployeeId?: number;
+    id: number;
+    orderNumber: string;
+    orderPriority: OrderPriority;
+    orderState: OrderState;
+    creationOrder: Date;
+    doneByEmployeeOrder: Date;
+    orderCompleted: Date;
+    addressId?: number;
+    customerId?: number;
+    employeeId?: number;
 }

@@ -1,1 +1,55 @@
-<p>order-list works!</p>
+<section class="sample-app-content">
+    <nav class="navbar  navbar-expand-sm navbar-dark bg-dark">
+        <a routerLink="/dashboard" class="nav-link text-white">Dashboard</a>
+        <a routerLink="/addemployee" class="nav-link text-white">Add Order</a>
+    </nav>
+    <h2 class="h2 text-center mt-2">Orders</h2>
+    <div class="card-body">
+        <table class="table table-bordered table-center">
+            <thead>
+                <tr>
+                    <th>Order Id</th>
+                    <th>order Number</th>
+                    <th>orderPriority</th>
+                    <th>orderState</th>
+                    <th>creationOrder</th>
+                    <th>doneByEmployeeOrder</th>
+                    <th>orderCompleted</th>
+                    <th>addressId</th>
+                    <th>customerId</th>
+                    <th>employeeId</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders" class="employees">
+                    <td><span class="badge">{{order.id}}</span></td>
+                    <a routerLink="/detail/{{order.id}}">
+                        <td>{{order.orderNumber}}</td>
+                    </a>
+
+                    <td style="color:black;"> {{order.orderPriority}}</td>
+                    <td>{{order.orderState}}</td>
+                    <td>{{order.creationOrder}} </td>
+                    <td>{{order.doneByEmployeeOrder}} </td>
+                    <td>
+                        <ul>
+                            <li class="list-inline-item">
+
+                                <a class="edit" routerLink="/update/{{order.id}}">
+                                    <i class="fas fa-edit"></i> Edit
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <button (click)="delete(order.id)" class="btn-delete">
+                             <i class="fas fa-trash"></i>Delete
+                            </button>
+                            </li>
+                        </ul>
+                    </td>
+
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</section>

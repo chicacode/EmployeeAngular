@@ -1,4 +1,4 @@
-enum OrderState {
+export enum OrderState {
     PendingShipping = 0,
     PreparingShipping,
     InProcess,

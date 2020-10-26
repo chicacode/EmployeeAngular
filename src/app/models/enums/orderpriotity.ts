@@ -1,4 +1,4 @@
-enum OrderPriority{
+export enum OrderPriority{
     Highest,
     Normal,
     Low

@@ -11,7 +11,6 @@ import { Employee } from '../../../models/employee';
   providedIn: 'root'
 })
 export class EmployeeService {
-
    // URL to web api
   private url: string;
   public employee: Employee;

@@ -31,21 +31,18 @@ export class StorageAddComponent implements OnInit {
       LastUpdate: ['', Validators.required],
       PartialQuantity: ['', Validators.required],
       productId: ['', Validators.required],
+      product: ['', Validators.required],
       warehouseId:  ['', Validators.required],
       // CategoryName: ['', Validators.required],
     });
-    this.getStorageByProducts();
+ 
   }
 
   goBack(): void {
     this.location.back();
   }
 
-  getStorageByProducts(): void {
-    this.storageService.getStorageByProducts()
-    .subscribe( storage => this.storage = storage);
-    console.log(this.storage);
-  }
+
   create(): void {
     const storage: Storage = Object.assign({}, this.storageForm.value);
     console.log(storage);

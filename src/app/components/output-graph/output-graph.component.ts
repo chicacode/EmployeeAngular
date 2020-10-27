@@ -15,7 +15,7 @@ export class OutputGraphComponent implements OnInit {
   chartOptions: Highcharts.Options = {
     series: [{
       data: [1, 2, 3, 4 , 5, 6, 7],
-      type: 'line'
+      type: 'area',
     }]
 }; // required
 

@@ -12,7 +12,8 @@
                     <th>Storage Id</th>
                     <th>lastUpdate</th>
                     <th>Quantity</th>
-                    <th>Products Id</th>
+                    <th>Product Id</th>
+                    <th>Products Items</th>
                     <th>Warehouse</th>
                 </tr>
             </thead>
@@ -24,6 +25,7 @@
                     <a routerLink="/detailpro/{{storage.productId}}">
                         <td>{{storage.productId}}</td>
                     </a>
+                    <td style="color:black;"> {{storage.product.name}}</td>
                     <td>{{storage.warehouseId}} </td>
 
                     <td>

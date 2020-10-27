@@ -6,4 +6,5 @@ export interface Product {
     totalQuantity: number;
     price: number;
     categoryName: string;
+    storageList: Storage[];
 }

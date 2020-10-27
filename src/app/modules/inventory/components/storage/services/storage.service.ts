@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
@@ -17,7 +17,7 @@ export class StorageService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
   constructor( private http: HttpClient ) {
-    this.url = 'https://localhost:44342/api/storages';
+    this.url = 'https://localhost:44342/api/storages/storages';
    }
 
    getStorages(): Observable<Storage[]>{
@@ -35,6 +35,14 @@ export class StorageService {
     );
   }
 
+  getStorageByProducts(): Observable<Storage> {
+    const url = `${this.url}`;
+    return this.http.get<Storage>(url)
+    .pipe(
+      catchError(this.handleError<Storage>(`getStorage`))
+    );
+
+  }
   addStorage(storage: Storage): Observable<Storage>{
     return this.http.post<Storage>(this.url, storage, this.httpOptions)
       .pipe(

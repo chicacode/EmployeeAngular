@@ -10,6 +10,7 @@ import { ProductUpdateComponent } from './components/product/components/product-
 import { WarehouseComponent } from './components/warehouse/warehouse/warehouse.component';
 import { StorageComponent } from './components/storage/storage/storage.component';
 import { MovementsComponent } from './components/movements/movements/movements.component';
+import { StorageAddComponent } from './components/storage/storage-add/storage-add.component';
 
 
 
@@ -21,7 +22,8 @@ import { MovementsComponent } from './components/movements/movements/movements.c
     ProductUpdateComponent,
     WarehouseComponent,
     StorageComponent,
-    MovementsComponent
+    MovementsComponent,
+    StorageAddComponent
   ],
   imports: [
     CommonModule,

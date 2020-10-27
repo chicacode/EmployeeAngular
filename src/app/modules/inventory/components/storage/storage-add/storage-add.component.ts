@@ -32,10 +32,8 @@ export class StorageAddComponent implements OnInit {
       PartialQuantity: ['', Validators.required],
       productId: ['', Validators.required],
       product: ['', Validators.required],
-      warehouseId:  ['', Validators.required],
-      // CategoryName: ['', Validators.required],
+      warehouseId:  ['', Validators.required]
     });
- 
   }
 
   goBack(): void {

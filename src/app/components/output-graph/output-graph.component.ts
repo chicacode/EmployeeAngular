@@ -16,8 +16,14 @@ export class OutputGraphComponent implements OnInit {
     series: [{
       data: [1, 2, 3, 4 , 5, 6, 7],
       type: 'area',
-    }]
-}; // required
+    }],
+    title: {
+      text: 'ERP Stats',
+      style: {
+        color: 'blue'
+      }
+    }
+    };
 
   constructor() { }
 

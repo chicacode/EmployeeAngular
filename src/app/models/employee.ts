@@ -1,3 +1,4 @@
+import { Role } from '@app/models/enums/role';
 export interface Employee {
     id: number;
     name: string;
@@ -6,5 +7,5 @@ export interface Employee {
     salary: number;
     userName: string;
     password: string;
-    isAdmin: boolean;
+    isAdmin: Role.Admin;
 }

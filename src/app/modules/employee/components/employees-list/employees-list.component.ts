@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
 import { Employee } from '@app/models/employee';
 import { EmployeeService } from '../../services/employee.service';
 
-
 @Component({
   selector: 'app-employees',
   templateUrl: './employees-list.component.html',
@@ -13,8 +12,8 @@ import { EmployeeService } from '../../services/employee.service';
 export class EmployeesListComponent implements OnInit {
 
   // interface type Employee
-  selectedEmployee: Employee;
   employees: Employee[];
+  isAdmin = false;
 
  // Dependency injection private property
  constructor(private employeeService: EmployeeService) { }
@@ -27,7 +26,7 @@ export class EmployeesListComponent implements OnInit {
     // ASyncronous signature subscribe waith for the observable
     // The subscribe() method passes the emitted array to the callback
     this.employeeService.getEmployees().subscribe(
-      response => {this.employees = response; console.log(response); },
+      response => {this.employees = response; console.log(response); this.isAdmin = true; },
       error => {console.log('There was a problem to get employees'); }
     );
   }

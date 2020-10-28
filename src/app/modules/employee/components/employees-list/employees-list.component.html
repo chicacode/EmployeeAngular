@@ -1,10 +1,16 @@
 <section class="sample-app-content">
+
     <nav class="navbar  navbar-expand-sm navbar-dark bg-dark">
         <a routerLink="/dashboard" class="nav-link text-white">Dashboard</a>
         <a routerLink="/addemployee" class="nav-link text-white"><i class="fas fa-plus-circle"></i> Add Employees</a>
     </nav>
     <h2 class="h2 text-center mt-2">Employees</h2>
-    <div class="card-body">
+    <div class="card-body" *ngIf="!isAdmin">
+        <div class="alert alert-danger" role="alert">
+            SORRY! This information is available just for Admin
+        </div>
+    </div>
+    <div class="card-body" *ngIf="isAdmin">
         <table class="table table-bordered table-center">
             <thead>
                 <tr>
@@ -14,6 +20,7 @@
                     <th>Job Position</th>
                     <th>Salary</th>
                     <th>Username</th>
+                    <th>Role</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,6 +34,7 @@
                     <td>{{employee.positionJob}}</td>
                     <td>{{employee.salary}} </td>
                     <td>{{employee.userName}} </td>
+                    <td>{{employee.isAdmin}} </td>
                     <td>
                         <ul>
                             <li class="list-inline-item">

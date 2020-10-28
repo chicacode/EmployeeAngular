@@ -1,11 +1,20 @@
 <div class="card mt-4">
-    <h4 class="card-header">Admin</h4>
+    <h4 class="card-header">Admins employees</h4>
     <div class="card-body">
         <p>This page can be accessed <u>only by administrators</u>.</p>
         <p class="mb-1">All users from secure (admin only) api end point:</p>
         <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
-        <ul *ngIf="users">
-            <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</li>
-        </ul>
+        <table *ngIf="users">
+            <thead>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Role</th>
+            </thead>
+            <tbody *ngFor="let user of users">
+                <td>{{user.firstName}}</td>
+                <td> {{user.lastName}}</td>
+                <td> {{user.role}}</td>
+            </tbody>
+        </table>
     </div>
 </div>

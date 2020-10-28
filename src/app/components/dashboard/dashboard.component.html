@@ -3,75 +3,58 @@
 <div class="grid grid-pad">
 
     <a class="col-1-8" routerLink="/products">
-        <div class="card text-white bg-dark">
+        <div class="card text-white">
             <div class="card-header">
                 <h5 class="card-title"> <a class=" text-white">Inventory</a></h5>
             </div>
             <div class="card-body">
-                <img src="assets/img/foto5.jpg " class="product-img ">
+                <img src="assets/img/foto5.jpg " class="product-img mb-2">
                 <p class="card-text ">Products</p>
             </div>
         </div>
     </a>
 
     <a class="col-1-8" routerLink="/orders">
-        <div class="card text-white bg-dark">
+        <div class="card text-white">
             <div class="card-header">
                 <h5 class="card-title"> <a class=" text-white">Sales</a></h5>
             </div>
             <div class="card-body">
-                <img src="assets/img/foto11.jpg " class="product-img ">
+                <img src="assets/img/foto11.jpg " class="product-img mb-2">
                 <p class="card-text ">Orders by Products</p>
             </div>
         </div>
     </a>
 
     <a class="col-1-8" routerLink="/employees">
-        <div class="card text-white bg-dark">
+        <div class="card text-white">
             <div class="card-header">
                 <h5 class="card-title"> <a class=" text-white">Human Resources</a></h5>
             </div>
             <div class="card-body">
-                <img src="assets/img/foto12.jpg " class="product-img ">
+                <img src="assets/img/foto12.jpg " class="product-img mb-2">
                 <p class="card-text ">Employees</p>
             </div>
         </div>
     </a>
 
     <a class="col-1-8" routerLink="/customers">
-        <div class="card text-white bg-dark">
+        <div class="card text-white">
             <div class="card-header">
                 <h5 class="card-title"> <a class=" text-white">CRM</a></h5>
             </div>
             <div class="card-body">
-                <img src="assets/img/foto13.jpg " class="product-img ">
+                <img src="assets/img/foto13.jpg " class="product-img mb-2">
                 <p class="card-text ">Customers</p>
             </div>
         </div>
     </a>
+    <app-footer></app-footer>
 </div>
-
-
-<div class="carrousel-container">
-    <a class="col-1-4 " *ngFor="let employee of employees" routerLink="/detail/{{employee.employeeId}} ">
+<!-- <div class="carrousel-container">
+    <a class="col-1-4 " *ngFor="let employee of employees" routerLink="/detail/{{employee.id}} ">
         <h4 class="h4"></h4>
         <app-carrousel [employees]="employee.userName"></app-carrousel>
 
     </a>
-</div>
-
-
-
-<!-- <h3 class="h3-employees ">Top Employees</h3>
-<div class="grid grid-pad ">
-
-    <div class="employees ">
-
-        <a *ngFor="let employee of employees " class="col-1-4 " routerLink="/detail/{{employee.employeeId}} ">
-            <div class="module ">
-                <h4 class="h4 ">{{employee.userName}}</h4>
-            </div>
-        </a>
-    </div>
-
 </div> -->

@@ -26,6 +26,7 @@
 .sidebar-sticky {
     position: relative;
     top: 0;
+    bottom: 0;
     height: calc(100vh - 48px);
     padding-top: .5rem;
     overflow-x: hidden;
@@ -65,11 +66,6 @@
     text-transform: uppercase;
 }
 
-
-/*
-   * Navbar
-   */
-
 .navbar-brand {
     padding-top: .75rem;
     padding-bottom: .75rem;
@@ -98,4 +94,17 @@
 .form-control-dark:focus {
     border-color: transparent;
     box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+@media (max-width: 1266px) {
+    .sidebar-sticky {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        height: calc(115vh - 10px);
+        padding-top: .5rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #e4e4d9;
+    }
 }

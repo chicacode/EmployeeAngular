@@ -5,12 +5,12 @@
         <a routerLink="/addemployee" class="nav-link text-white"><i class="fas fa-plus-circle"></i> Add Employees</a>
     </nav>
     <h2 class="h2 text-center mt-2">Employees</h2>
-    <div class="card-body" *ngIf="!isAdmin">
+    <div class="card-body" *ngIf="!isAdmini">
         <div class="alert alert-danger" role="alert">
             SORRY! This information is available just for Admin
         </div>
     </div>
-    <div class="card-body" *ngIf="isAdmin">
+    <div class="card-body" *ngIf="isAdmini">
         <table class="table table-bordered table-center">
             <thead>
                 <tr>

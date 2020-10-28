@@ -13,7 +13,7 @@ export class EmployeesListComponent implements OnInit {
 
   // interface type Employee
   employees: Employee[];
-  isAdmin = false;
+  isAdmini = false;
 
  // Dependency injection private property
  constructor(private employeeService: EmployeeService) { }
@@ -26,7 +26,7 @@ export class EmployeesListComponent implements OnInit {
     // ASyncronous signature subscribe waith for the observable
     // The subscribe() method passes the emitted array to the callback
     this.employeeService.getEmployees().subscribe(
-      response => {this.employees = response; console.log(response); this.isAdmin = true; },
+      response => {this.employees = response; console.log(response); this.isAdmini = true; },
       error => {console.log('There was a problem to get employees'); }
     );
   }

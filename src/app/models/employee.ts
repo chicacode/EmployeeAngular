@@ -7,5 +7,5 @@ export interface Employee {
     salary: number;
     userName: string;
     password: string;
-    isAdmin: Role.Admin;
+    isAdmin: Role;
 }

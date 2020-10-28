@@ -13,7 +13,6 @@ import { StorageComponent } from './components/storage/storage/storage.component
 import { StorageAddComponent } from './components/storage/storage-add/storage-add.component';
 
 
-
 @NgModule({
   declarations: [
     ProductListComponent,

@@ -16,7 +16,6 @@ export class RegisterComponent implements OnInit {
   loading = false;
   submitted = false;
 
-
   constructor(
     private route: ActivatedRoute,
     private router: Router,

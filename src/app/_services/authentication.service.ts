@@ -10,6 +10,7 @@ import { User } from '@app/models/user';
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
     private url: string;
+    private baseUrl: string;
     private userSubject: BehaviorSubject<User>;
     public user: Observable<User>;
 
@@ -24,6 +25,7 @@ export class AuthenticationService {
             this.userSubject =  new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));
             this.user = this.userSubject.asObservable();
             this.url = 'https://localhost:44342/api/users/authenticate';
+            this.baseUrl = 'https://localhost:44342/api/users/register';
         }
     public get userValue(): User {
         return this.userSubject.value;
@@ -40,6 +42,10 @@ export class AuthenticationService {
         }));
     }
 
+    // tslint:disable-next-line: typedef
+    register(account: User) {
+        return this.http.post(this.baseUrl, account);
+    }
     // tslint:disable-next-line: typedef
     logout(){
         // remove user from Local storage to log user out

@@ -5,6 +5,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AdminComponent } from './admin/admin/admin.component';
 import { LoginComponent } from './login/login/login.component';
 import { AuthGuard } from './_helpers/auth.guard';
+import { RegisterComponent } from './register/register/register.component';
 import { Role } from './models/enums/role';
 import { OutputGraphComponent } from './components/output-graph/output-graph.component';
 
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent,  canActivate: [AuthGuard] },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data: { roles: [Role.Admin] } },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'graph', component: OutputGraphComponent },
   {
     path: 'employee',

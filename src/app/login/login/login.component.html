@@ -1,7 +1,7 @@
 <div class="col-md-6 offset-md-3 mt-5">
     <div class="alert alert-info">
-        <strong>Normal User</strong> - U: user P: user<br />
-        <strong>Administrator</strong> - U: luke P: admin
+        <!-- <strong>Normal User</strong> - U: user P: user<br /> -->
+        <strong>Administrator</strong> - U: loki P: admin
     </div>
     <div class="card">
         <h4 class="card-header text-center">ENTERPRISE RESOURCE PLANNING</h4>
@@ -25,6 +25,7 @@
                     <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                     Login
                 </button>
+                <a routerLink="/register" class="btn btn-link">Register</a>
                 <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
             </form>
         </div>

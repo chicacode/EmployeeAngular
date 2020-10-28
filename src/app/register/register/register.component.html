@@ -1,6 +1,5 @@
-<h2>
-    Register</h2>
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+<h2 class="text-center mt-2">Register</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form">
     <div class="form-group">
         <label for="firstName">First Name</label>
         <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />

@@ -13,7 +13,6 @@ export class CustomerListComponent implements OnInit {
 
   selectedCustomer: Customer;
   customers: Customer[];
-
   constructor( private customerService: CustomerService) { }
 
   ngOnInit(): void {
@@ -22,8 +21,7 @@ export class CustomerListComponent implements OnInit {
 
   getCustomers(): void{
     this.customerService.getCustomers().subscribe(
-      response => {this.customers = response; console.log(response); },
-      error => {console.log('There was a problem to get Customers'); }
+      response => {this.customers = response; console.log(response); }
     );
   }
 
